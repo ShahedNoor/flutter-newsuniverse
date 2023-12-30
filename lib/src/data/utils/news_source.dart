@@ -1,4 +1,4 @@
-class NewsController {
+class NewsSource {
   dynamic newsList = [
     {
       "newspaperName": "Prothom Alo",

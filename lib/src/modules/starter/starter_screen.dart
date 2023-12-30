@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsuniverse/src/controller/starter_screen_controller.dart';
-import 'package:newsuniverse/src/modules/home/home_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class StarterScreen extends StatefulWidget {
   const StarterScreen({super.key});
