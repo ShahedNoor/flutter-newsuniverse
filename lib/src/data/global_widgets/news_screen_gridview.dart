@@ -16,9 +16,7 @@ class _NewsScreenState extends State<NewsScreen> {
     return Expanded(
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 0.8
-        ),
+            crossAxisCount: 2, childAspectRatio: 0.8),
         itemCount: 10,
         itemBuilder: (context, index) {
           return Padding(
@@ -32,6 +30,15 @@ class _NewsScreenState extends State<NewsScreen> {
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.circular(10),
+              ),
+              child: Align(
+                alignment: Alignment(0.9, 0.9),
+                child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.favorite_border,
+                  ),
+                ),
               ),
             ),
           );

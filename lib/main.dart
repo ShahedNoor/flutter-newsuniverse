@@ -34,12 +34,13 @@ class _NewsUniverseState extends State<NewsUniverse> {
           int currentState = snapshot.data!;
 
           return MaterialApp(
+            title: 'NewsUniverse',
               debugShowCheckedModeBanner: false,
               routes: {
                 'starterScreen': (context) => StarterScreen(),
                 'homeScreen': (context) => HomeScreen()
               },
-              initialRoute: currentState == 1 ? 'homeScreen' : 'starterScreen');
+              initialRoute: currentState == 2 ? 'homeScreen' : 'starterScreen');
         } else if (snapshot.hasError) {
           // Handle error
           return Text('Error: ${snapshot.error}');
