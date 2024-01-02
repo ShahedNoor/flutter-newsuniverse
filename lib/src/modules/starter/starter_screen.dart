@@ -14,24 +14,21 @@ class _StarterScreenState extends State<StarterScreen> {
   Widget build(BuildContext context) {
     var starterScreenProvider = Provider.of<StarterScreenController>(context);
     return Scaffold(
-      backgroundColor: Colors.black,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/images/starter_icon/newsuniverse.png",
-              width: MediaQuery.sizeOf(context).width / 2,
-              height: MediaQuery.sizeOf(context).height / 2,
+              "assets/images/starter_icon/starter_icon.png",
+              width: MediaQuery.sizeOf(context).width / 3,
+              height: MediaQuery.sizeOf(context).height / 3,
+              color: Colors.blue,
             ),
             Padding(
               padding: EdgeInsets.all(8),
               child: Text(
-                "Made It Simple",
-                style: TextStyle(
-                    fontSize: 22,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
+                "Welcome to NewsUniverse!",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
             ),
             Padding(
@@ -40,7 +37,8 @@ class _StarterScreenState extends State<StarterScreen> {
                 "Discover the world's best newspapers and magazines",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 17, color: Colors.white),
+                  fontSize: 17,
+                ),
               ),
             ),
             ElevatedButton(
