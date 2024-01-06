@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({super.key});
+  final Function(int) onTabTapped;
+
+  BottomNavigation({Key? key, Function(int)? onTabTapped})
+      : onTabTapped = onTabTapped ?? ((_) {});
 
   @override
   State<BottomNavigation> createState() => _BottomNavigationState();
@@ -9,35 +12,33 @@ class BottomNavigation extends StatefulWidget {
 
 class _BottomNavigationState extends State<BottomNavigation> {
   int currentIndex = 0;
-  void onTapped(int index) {
+
+  void onTapped(index) {
     setState(() {
       currentIndex = index;
     });
+
+    widget.onTabTapped(currentIndex);
   }
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: [
+      items: const [
         BottomNavigationBarItem(
-          backgroundColor: Colors.black,
-            icon: Icon(Icons.chrome_reader_mode_outlined), label: "For You"),
+          icon: Icon(Icons.chrome_reader_mode),
+          label: "For You",
+        ),
         BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.amp_stories_rounded), label: "Browse"),
+          icon: Icon(Icons.favorite),
+          label: "Favorite",
+        ),
         BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.download_for_offline), label: "Downloaded"),
-        BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.bookmark), label: "Bookmarks"),
-        BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.more_horiz_rounded), label: "More"),
+          icon: Icon(Icons.more_horiz_rounded),
+          label: "More",
+        ),
       ],
-      backgroundColor: Colors.black,
-      selectedItemColor: Colors.green,
-      unselectedItemColor: Colors.blue,
+      selectedItemColor: Colors.blue,
       currentIndex: currentIndex,
       onTap: onTapped,
     );

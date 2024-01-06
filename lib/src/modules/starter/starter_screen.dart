@@ -22,7 +22,6 @@ class _StarterScreenState extends State<StarterScreen> {
               "assets/images/starter_icon/starter_icon.png",
               width: MediaQuery.sizeOf(context).width / 3,
               height: MediaQuery.sizeOf(context).height / 3,
-              color: Colors.blue,
             ),
             Padding(
               padding: EdgeInsets.all(8),

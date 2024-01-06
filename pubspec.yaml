@@ -43,25 +43,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: "^0.13.1"
-
-flutter_launcher_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/images/launcher_icon/launcher_icon.png"
-  min_sdk_android: 21 # android min sdk min:16, default 21
-  web:
-    generate: true
-    image_path: "assets/images/launcher_icon/launcher_icon.png"
-    background_color: "#hexcode"
-    theme_color: "#hexcode"
-  windows:
-    generate: true
-    image_path: "assets/images/launcher_icon/launcher_icon.png"
-    icon_size: 48 # min:48, max:256, default: 48
-  macos:
-    generate: true
-    image_path: "assets/images/launcher_icon/launcher_icon.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -83,8 +64,33 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+#   - Assets for starter screen
     - assets/images/starter_icon/starter_icon.png
-  #   - images/a_dot_ham.jpeg
+#   - Assets for bangla newspapers
+    - assets/images/bangla_newspaper_images/prothom_alo.jpg
+    - assets/images/bangla_newspaper_images/ittefaq.jpg
+    - assets/images/bangla_newspaper_images/jugantor.jpg
+    - assets/images/bangla_newspaper_images/kalerkantho.jpg
+    - assets/images/bangla_newspaper_images/samakal.jpg
+    - assets/images/bangla_newspaper_images/dailyjanakantha.jpg
+    - assets/images/bangla_newspaper_images/bd_pratidin.jpg
+    - assets/images/bangla_newspaper_images/nayadiganta.jpg
+    - assets/images/bangla_newspaper_images/jjdin.jpg
+    - assets/images/bangla_newspaper_images/amar_sangbad.jpg
+    - assets/images/bangla_newspaper_images/protidinersangbad.jpg
+    - assets/images/bangla_newspaper_images/dailysangram.jpg
+    - assets/images/bangla_newspaper_images/mzamin.jpg
+    - assets/images/bangla_newspaper_images/bonikbarta.jpg
+    - assets/images/bangla_newspaper_images/bhorerkagoj.jpg
+    - assets/images/bangla_newspaper_images/the_daily_inqilab.png
+    - assets/images/bangla_newspaper_images/manobkantha.jpg
+    - assets/images/bangla_newspaper_images/bdjournal.jpg
+    - assets/images/bangla_newspaper_images/alokitobangladesh.jpg
+    - assets/images/bangla_newspaper_images/sorejominbarta.jpg
+    - assets/images/bangla_newspaper_images/shomoyeralo.jpg
+    - assets/images/bangla_newspaper_images/kalbela.png
+    - assets/images/bangla_newspaper_images/ajkalerkhobor.jpg
+    - assets/images/bangla_newspaper_images/dainik_bangla.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

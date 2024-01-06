@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:newsuniverse/src/controller/favorite_data_controller.dart';
 import 'package:newsuniverse/src/controller/starter_screen_controller.dart';
+import 'package:newsuniverse/src/data/utils/news_source.dart';
 import 'package:newsuniverse/src/modules/home/home_screen.dart';
 import 'package:newsuniverse/src/modules/starter/starter_screen.dart';
 import 'package:provider/provider.dart';
@@ -9,8 +11,10 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => StarterScreenController()),
+        ChangeNotifierProvider(create: (context) => NewsSource()),
+        ChangeNotifierProvider(create: (context) => FavoriteController())
       ],
-      child: NewsUniverse(),
+      child: const NewsUniverse(),
     ),
   );
 }
@@ -37,16 +41,16 @@ class _NewsUniverseState extends State<NewsUniverse> {
             title: 'NewsUniverse',
               debugShowCheckedModeBanner: false,
               routes: {
-                'starterScreen': (context) => StarterScreen(),
-                'homeScreen': (context) => HomeScreen()
+                'starterScreen': (context) => const StarterScreen(),
+                'homeScreen': (context) => const HomeScreen()
               },
-              initialRoute: currentState == 2 ? 'homeScreen' : 'starterScreen');
+              initialRoute: currentState == 1 ? 'homeScreen' : 'starterScreen');
         } else if (snapshot.hasError) {
           // Handle error
           return Text('Error: ${snapshot.error}');
         } else {
           // Show loading indicator
-          return CircularProgressIndicator();
+          return const CircularProgressIndicator();
         }
       },
     );
