@@ -15,7 +15,8 @@ class FavouriteScreen extends StatefulWidget {
 class _FavouriteScreenState extends State<FavouriteScreen> {
   @override
   Widget build(BuildContext context) {
-    final favouriteItemProvider = Provider.of<FavoriteDataController>(context, listen: false);
+    final favouriteItemProvider =
+        Provider.of<FavoriteDataController>(context, listen: false);
     final newsList =
         Provider.of<NewsSource>(context, listen: false).banglaNewsPaperList;
     return GridView.builder(
@@ -31,7 +32,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => NewsWebView(
-                    url: favouriteItemProvider.favouriteItems[index]['newsPaperLink'],
+                    url: favouriteItemProvider.favouriteItems[index]
+                        ['newsPaperLink'],
                   ),
                 ),
               );
@@ -41,7 +43,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 color: Colors.white,
                 border: Border.all(color: Colors.black, width: 1),
                 image: DecorationImage(
-                  image: AssetImage(favouriteItemProvider.favouriteItems[index]['newsPaperImage']),
+                  image: AssetImage(favouriteItemProvider.favouriteItems[index]
+                      ['newsPaperImage']),
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -49,15 +52,17 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 alignment: const Alignment(1.1, 1.2),
                 child: IconButton(
                   onPressed: () {
-                    setState(() {
-                      int originalIndex = newsList.indexWhere((item) =>
-                      item['newsPaperLink'] ==
-                          favouriteItemProvider.favouriteItems[index]['newsPaperLink']);
-                      if (index != -1) {
-                        newsList[originalIndex]['isFavourite'] = false;
-                      }
-                      favouriteItemProvider.removeFromFavourite(index);
-                    });
+                    setState(
+                      () {
+                        int originalIndex = newsList.indexWhere((item) =>
+                            item['id'] ==
+                            favouriteItemProvider.favouriteItems[index]['id']);
+                        if (index != -1) {
+                          newsList[originalIndex]['isFavourite'] = false;
+                        }
+                        favouriteItemProvider.removeFromFavourite(index);
+                      },
+                    );
                   },
                   icon: const Icon(Icons.delete_outline),
                 ),

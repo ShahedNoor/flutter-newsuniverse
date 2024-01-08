@@ -50,15 +50,26 @@ class _NewsScreenGridViewState extends State<NewsScreenGridView> {
                   alignment: const Alignment(1.1, 1.2),
                   child: IconButton(
                     onPressed: () {
-                      setState(() {
-                        newsList[index]['isFavourite'] = !newsList[index]['isFavourite'];
+                      setState(
+                        () {
+                          newsList[index]['isFavourite'] =
+                              !newsList[index]['isFavourite'];
 
-                        if (newsList[index]['isFavourite']) {
-                          favouriteDataProvider.addToFavorite(newsList[index]);
-                        } else {
-                          favouriteDataProvider.removeFromFavourite(index);
-                        }
-                      });
+                          if (newsList[index]['isFavourite']) {
+                            favouriteDataProvider
+                                .addToFavorite(newsList[index]);
+                          } else {
+                            int favIndex = favouriteDataProvider.favouriteItems
+                                .indexWhere((item) =>
+                                    item['id'] ==
+                                    newsList[index]['id']);
+                            if (favIndex != -1) {
+                              favouriteDataProvider
+                                  .removeFromFavourite(favIndex);
+                            }
+                          }
+                        },
+                      );
                     },
                     icon: Icon(
                       newsList[index]['isFavourite']
