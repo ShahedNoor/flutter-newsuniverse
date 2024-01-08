@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:newsuniverse/src/controller/favourite_data_controller.dart';
+import 'package:provider/provider.dart';
+
+import '../../data/utils/news_source.dart';
+import '../webview/news_webview_screen.dart';
 
 class FavouriteScreen extends StatefulWidget {
   const FavouriteScreen({super.key});
@@ -10,8 +15,52 @@ class FavouriteScreen extends StatefulWidget {
 class _FavouriteScreenState extends State<FavouriteScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("Hey, I'm here!"),
+    final favouriteItemProvider = Provider.of<FavoriteDataController>(context, listen: false);
+    final newsList =
+        Provider.of<NewsSource>(context, listen: false).banglaNewsPaperList;
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, childAspectRatio: 1.7),
+      itemCount: favouriteItemProvider.favouriteItems.length,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => NewsWebView(
+                    url: favouriteItemProvider.favouriteItems[index]['newsPaperLink'],
+                  ),
+                ),
+              );
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.black, width: 1),
+                image: DecorationImage(
+                  image: AssetImage(favouriteItemProvider.favouriteItems[index]['newsPaperImage']),
+                ),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Align(
+                alignment: const Alignment(1.1, 1.2),
+                child: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      favouriteItemProvider.removeFromFavourite(index);
+                      newsList[index]['isFavourite'] = false;
+                    });
+                  },
+                  icon: const Icon(Icons.delete_outline),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

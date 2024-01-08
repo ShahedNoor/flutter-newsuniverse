@@ -44,16 +44,13 @@ class _NewsWebViewState extends State<NewsWebView> {
             },
             icon: const Icon(Icons.arrow_back_ios),
           ),
-          actionIconButton: Hero(
-            tag: 'darkModeButton',
-            child: IconButton(
-              onPressed: () {
-                setState(() {
-                  isDarkMode = !isDarkMode;
-                });
-              },
-              icon: Icon(isDarkMode ? darkIcon : lightIcon),
-            ),
+          actionIconButton: IconButton(
+            onPressed: () {
+              setState(() {
+                isDarkMode = !isDarkMode;
+              });
+            },
+            icon: Icon(isDarkMode ? darkIcon : lightIcon),
           ),
         ),
         body: WebViewWidget(

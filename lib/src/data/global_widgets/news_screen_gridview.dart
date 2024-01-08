@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/controller/favorite_data_controller.dart';
+import 'package:newsuniverse/src/controller/favourite_data_controller.dart';
 import 'package:newsuniverse/src/data/utils/news_source.dart';
 import 'package:newsuniverse/src/modules/webview/news_webview_screen.dart';
 import 'package:provider/provider.dart';
@@ -16,8 +16,8 @@ class _NewsScreenGridViewState extends State<NewsScreenGridView> {
   Widget build(BuildContext context) {
     final newsList =
         Provider.of<NewsSource>(context, listen: false).banglaNewsPaperList;
-    final favoriteDataProvider =
-        Provider.of<FavoriteController>(context, listen: false);
+    final favouriteDataProvider =
+        Provider.of<FavoriteDataController>(context, listen: false);
     return Expanded(
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -50,9 +50,17 @@ class _NewsScreenGridViewState extends State<NewsScreenGridView> {
                   alignment: const Alignment(1.1, 1.2),
                   child: IconButton(
                     onPressed: () {
-                      favoriteDataProvider.addToFavorite(newsList[index]);
+                      setState(() {
+                        newsList[index]['isFavourite'] =
+                            !newsList[index]['isFavourite'];
+                      });
+                      favouriteDataProvider.addToFavorite(newsList[index]);
                     },
-                    icon: const Icon(Icons.favorite_border),
+                    icon: Icon(
+                      newsList[index]['isFavourite']
+                          ? Icons.favorite
+                          : Icons.favorite_border,
+                    ),
                   ),
                 ),
               ),

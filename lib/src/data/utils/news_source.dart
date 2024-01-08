@@ -3,101 +3,125 @@ import 'package:flutter/material.dart';
 class NewsSource extends ChangeNotifier{
   dynamic banglaNewsPaperList = [
     {
-      "newspaperName": "prothom alo",
+      "newsPaperName": "prothom alo",
       "newsPaperImage": "assets/images/bangla_newspaper_images/prothom_alo.jpg",
-      "newsPaperLink": "https://www.prothomalo.com/"
+      "newsPaperLink": "https://www.prothomalo.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "ittefaq",
+      "newsPaperName": "ittefaq",
       "newsPaperImage": "assets/images/bangla_newspaper_images/ittefaq.jpg",
-      "newsPaperLink": "https://www.ittefaq.com.bd/"
+      "newsPaperLink": "https://www.ittefaq.com.bd/",
+      "isFavourite": false,
     },{
-      "newspaperName": "jugantor",
+      "newsPaperName": "jugantor",
       "newsPaperImage": "assets/images/bangla_newspaper_images/jugantor.jpg",
-      "newsPaperLink": "https://www.jugantor.com/"
+      "newsPaperLink": "https://www.jugantor.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "kalerkantho",
+      "newsPaperName": "kalerkantho",
       "newsPaperImage": "assets/images/bangla_newspaper_images/kalerkantho.jpg",
-      "newsPaperLink": "https://www.kalerkantho.com/"
+      "newsPaperLink": "https://www.kalerkantho.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "samakal",
+      "newsPaperName": "samakal",
       "newsPaperImage": "assets/images/bangla_newspaper_images/samakal.jpg",
-      "newsPaperLink": "https://samakal.com/"
+      "newsPaperLink": "https://samakal.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "dailyjanakantha",
+      "newsPaperName": "dailyjanakantha",
       "newsPaperImage": "assets/images/bangla_newspaper_images/dailyjanakantha.jpg",
-      "newsPaperLink": "https://www.dailyjanakantha.com/"
+      "newsPaperLink": "https://www.dailyjanakantha.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "bd pratidin",
+      "newsPaperName": "bd pratidin",
       "newsPaperImage": "assets/images/bangla_newspaper_images/bd_pratidin.jpg",
-      "newsPaperLink": "https://www.bd-pratidin.com/"
+      "newsPaperLink": "https://www.bd-pratidin.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "nayadiganta",
+      "newsPaperName": "nayadiganta",
       "newsPaperImage": "assets/images/bangla_newspaper_images/nayadiganta.jpg",
-      "newsPaperLink": "https://www.dailynayadiganta.com/"
+      "newsPaperLink": "https://www.dailynayadiganta.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "jjdin",
+      "newsPaperName": "jjdin",
       "newsPaperImage": "assets/images/bangla_newspaper_images/jjdin.jpg",
-      "newsPaperLink": "https://www.jaijaidinbd.com/"
+      "newsPaperLink": "https://www.jaijaidinbd.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "amar sangbad",
+      "newsPaperName": "amar sangbad",
       "newsPaperImage": "assets/images/bangla_newspaper_images/amar_sangbad.jpg",
-      "newsPaperLink": "https://www.amarsangbad.com/"
+      "newsPaperLink": "https://www.amarsangbad.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "protidinersangbad",
+      "newsPaperName": "protidinersangbad",
       "newsPaperImage": "assets/images/bangla_newspaper_images/protidinersangbad.jpg",
-      "newsPaperLink": "https://www.protidinersangbad.com/"
+      "newsPaperLink": "https://www.protidinersangbad.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "dailysangram",
+      "newsPaperName": "dailysangram",
       "newsPaperImage": "assets/images/bangla_newspaper_images/dailysangram.jpg",
-      "newsPaperLink": "https://dailysangram.com/"
+      "newsPaperLink": "https://dailysangram.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "mzamin",
+      "newsPaperName": "mzamin",
       "newsPaperImage": "assets/images/bangla_newspaper_images/mzamin.jpg",
-      "newsPaperLink": "https://mzamin.com/"
+      "newsPaperLink": "https://mzamin.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "bonikbarta",
+      "newsPaperName": "bonikbarta",
       "newsPaperImage": "assets/images/bangla_newspaper_images/bonikbarta.jpg",
-      "newsPaperLink": "https://bonikbarta.net/"
+      "newsPaperLink": "https://bonikbarta.net/",
+      "isFavourite": false,
     },{
-      "newspaperName": "bhorerkagoj",
+      "newsPaperName": "bhorerkagoj",
       "newsPaperImage": "assets/images/bangla_newspaper_images/bhorerkagoj.jpg",
-      "newsPaperLink": "https://bhorerkagoj.com/"
+      "newsPaperLink": "https://bhorerkagoj.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "the daily inqilab",
+      "newsPaperName": "the daily inqilab",
       "newsPaperImage": "assets/images/bangla_newspaper_images/the_daily_inqilab.png",
-      "newsPaperLink": "https://dailyinqilab.com/"
+      "newsPaperLink": "https://dailyinqilab.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "manobkantha",
+      "newsPaperName": "manobkantha",
       "newsPaperImage": "assets/images/bangla_newspaper_images/manobkantha.jpg",
-      "newsPaperLink": "https://www.manobkantha.com.bd/"
+      "newsPaperLink": "https://www.manobkantha.com.bd/",
+      "isFavourite": false,
     },{
-      "newspaperName": "bdjournal",
+      "newsPaperName": "bdjournal",
       "newsPaperImage": "assets/images/bangla_newspaper_images/bdjournal.jpg",
-      "newsPaperLink": "https://www.bd-journal.com/"
+      "newsPaperLink": "https://www.bd-journal.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "alokitobangladesh",
+      "newsPaperName": "alokitobangladesh",
       "newsPaperImage": "assets/images/bangla_newspaper_images/alokitobangladesh.jpg",
-      "newsPaperLink": "https://www.alokitobangladesh.com/"
+      "newsPaperLink": "https://www.alokitobangladesh.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "sorejominbarta",
+      "newsPaperName": "sorejominbarta",
       "newsPaperImage": "assets/images/bangla_newspaper_images/sorejominbarta.jpg",
-      "newsPaperLink": "https://sorejominbarta.com/"
+      "newsPaperLink": "https://sorejominbarta.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "shomoyeralo",
+      "newsPaperName": "shomoyeralo",
       "newsPaperImage": "assets/images/bangla_newspaper_images/shomoyeralo.jpg",
-      "newsPaperLink": "https://www.shomoyeralo.com/"
+      "newsPaperLink": "https://www.shomoyeralo.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "kalbela",
+      "newsPaperName": "kalbela",
       "newsPaperImage": "assets/images/bangla_newspaper_images/kalbela.png",
-      "newsPaperLink": "https://www.kalbela.com/"
+      "newsPaperLink": "https://www.kalbela.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "ajkalerkhobor",
+      "newsPaperName": "ajkalerkhobor",
       "newsPaperImage": "assets/images/bangla_newspaper_images/ajkalerkhobor.jpg",
-      "newsPaperLink": "https://ajkalerkhobor.com/"
+      "newsPaperLink": "https://ajkalerkhobor.com/",
+      "isFavourite": false,
     },{
-      "newspaperName": "dainikbangla",
+      "newsPaperName": "dainikbangla",
       "newsPaperImage": "assets/images/bangla_newspaper_images/dainik_bangla.jpg",
-      "newsPaperLink": "https://www.dainikbangla.com.bd/"
+      "newsPaperLink": "https://www.dainikbangla.com.bd/",
+      "isFavourite": false,
     },
   ];
 }

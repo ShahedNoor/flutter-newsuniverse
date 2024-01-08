@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/controller/favorite_data_controller.dart';
+import 'package:newsuniverse/src/controller/favourite_data_controller.dart';
 import 'package:newsuniverse/src/controller/starter_screen_controller.dart';
 import 'package:newsuniverse/src/data/utils/news_source.dart';
 import 'package:newsuniverse/src/modules/home/home_screen.dart';
@@ -12,7 +12,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (context) => StarterScreenController()),
         ChangeNotifierProvider(create: (context) => NewsSource()),
-        ChangeNotifierProvider(create: (context) => FavoriteController())
+        ChangeNotifierProvider(create: (context) => FavoriteDataController())
       ],
       child: const NewsUniverse(),
     ),
