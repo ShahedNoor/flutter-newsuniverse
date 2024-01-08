@@ -51,10 +51,14 @@ class _NewsScreenGridViewState extends State<NewsScreenGridView> {
                   child: IconButton(
                     onPressed: () {
                       setState(() {
-                        newsList[index]['isFavourite'] =
-                            !newsList[index]['isFavourite'];
+                        newsList[index]['isFavourite'] = !newsList[index]['isFavourite'];
+
+                        if (newsList[index]['isFavourite']) {
+                          favouriteDataProvider.addToFavorite(newsList[index]);
+                        } else {
+                          favouriteDataProvider.removeFromFavourite(index);
+                        }
                       });
-                      favouriteDataProvider.addToFavorite(newsList[index]);
                     },
                     icon: Icon(
                       newsList[index]['isFavourite']

@@ -50,8 +50,13 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 child: IconButton(
                   onPressed: () {
                     setState(() {
+                      int originalIndex = newsList.indexWhere((item) =>
+                      item['newsPaperLink'] ==
+                          favouriteItemProvider.favouriteItems[index]['newsPaperLink']);
+                      if (index != -1) {
+                        newsList[originalIndex]['isFavourite'] = false;
+                      }
                       favouriteItemProvider.removeFromFavourite(index);
-                      newsList[index]['isFavourite'] = false;
                     });
                   },
                   icon: const Icon(Icons.delete_outline),
