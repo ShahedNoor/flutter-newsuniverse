@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:newsuniverse/src/data/global_widgets/grid_view/bangla_epaper_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/my_appbar.dart';
 import 'package:newsuniverse/src/modules/favourite/favourite_screen.dart';
 
 import '../../data/global_widgets/bottom_navigation_bar.dart';
-import '../../data/global_widgets/news_screen_gridview.dart';
+import '../../data/global_widgets/grid_view/bangla_news_screen_gridview.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key,});
+  const HomeScreen({
+    super.key,
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -46,11 +49,39 @@ class _HomeScreenState extends State<HomeScreen> {
             });
           },
         ),
-        body: currentIndex == 0 ? const Column(
-          children: [
-            NewsScreenGridView(),
-          ],
-        ) : FavouriteScreen(),
+        body: currentIndex == 0 ? const DefaultTabController(
+          initialIndex: 1,
+          length: 11,
+          child: Column(
+            children: [
+              TabBar(
+                isScrollable: true,
+                tabAlignment: TabAlignment.start,
+                tabs: [
+                  Tab(text: 'Bangla Newspapers'),
+                  Tab(text: 'Bangla Epapers'),
+                  Tab(text: 'Online Newspapers'),
+                  Tab(text: 'TV Channels'),
+                  Tab(text: 'Local Newspapers'),
+                  Tab(text: 'International Newspapers'),
+                  Tab(text: 'Radio Channels'),
+                  Tab(text: 'International TV Channels'),
+                  Tab(text: 'Indian Newspapers'),
+                  Tab(text: 'Magazines'),
+                  Tab(text: 'Job Sites'),
+                ],
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    BanglaNewsScreenGridView(),
+                    BanglaEpaperScreenGridView(),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ) : const FavouriteScreen()
       ),
     );
   }

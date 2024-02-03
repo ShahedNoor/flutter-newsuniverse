@@ -148,4 +148,98 @@ class NewsSource extends ChangeNotifier{
       "isFavourite": false,
     },
   ];
+
+  List banglaEpaperList = [
+    {
+      "id": 0,
+      "newsPaperName": "prothom alo",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_prothom_alo.png",
+      "newsPaperLink": "https://epaper.prothomalo.com/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "epratidin",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_pratidin.jpg",
+      "newsPaperLink": "https://www.ebdpratidin.com/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "jugantor",
+      "newsPaperImage": "assets/images/bangla_epaper_images/epaper_jugantor.jpg",
+      "newsPaperLink": "https://epaper.jugantor.com/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "samakal",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_samakal.png",
+      "newsPaperLink": "https://epaper.samakal.com/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "janakontho",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_janakontho.png",
+      "newsPaperLink": "https://epaper.dailyjanakantha.com/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "bonikbarta",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_bonikbarta.jpg",
+      "newsPaperLink": "https://epaper.bonikbarta.net/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "nayadiganta",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_nayadiganta.jpg",
+      "newsPaperLink": "https://enayadiganta.com/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "ittefaq",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_ittefaq.png",
+      "newsPaperLink": "https://epaper.ittefaq.com.bd/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "kalerkantho",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_kalerkantho.png",
+      "newsPaperLink": "https://www.ekalerkantho.com/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "amadershomoy",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_amadershomoy.png",
+      "newsPaperLink": "https://epaper.dainikamadershomoy.com/2024/01/09/page-01",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "jjdin",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_jjdin.jpg",
+      "newsPaperLink": "https://ejjdin.com/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "inqilab",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_inqilab.png",
+      "newsPaperLink": "https://dailyinqilab.com/epaper/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "sharebiz",
+      "newsPaperImage": "assets/images/bangla_epaper_images/esharebiz.jpg",
+      "newsPaperLink": "https://esharebiz.net/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "bhorer kagoj",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_bhorer_kagoj.jpg",
+      "newsPaperLink": "https://ebhorerkagoj.com/",
+      "isFavourite": false,
+    },{
+      "id": 0,
+      "newsPaperName": "bangladeshtoday",
+      "newsPaperImage": "assets/images/bangla_epaper_images/e_bangladeshtoday.jpg",
+      "newsPaperLink": "https://epaper.thebangladeshtoday.com/",
+      "isFavourite": false,
+    },
+  ];
 }

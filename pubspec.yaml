@@ -91,6 +91,23 @@ flutter:
     - assets/images/bangla_newspaper_images/kalbela.png
     - assets/images/bangla_newspaper_images/ajkalerkhobor.jpg
     - assets/images/bangla_newspaper_images/dainik_bangla.jpg
+#   - Assets for bangla epapers
+    - assets/images/bangla_epaper_images/e_prothom_alo.png
+    - assets/images/bangla_epaper_images/e_pratidin.jpg
+    - assets/images/bangla_epaper_images/epaper_jugantor.jpg
+    - assets/images/bangla_epaper_images/e_samakal.png
+    - assets/images/bangla_epaper_images/e_janakontho.png
+    - assets/images/bangla_epaper_images/e_bonikbarta.jpg
+    - assets/images/bangla_epaper_images/e_nayadiganta.jpg
+    - assets/images/bangla_epaper_images/e_ittefaq.png
+    - assets/images/bangla_epaper_images/e_kalerkantho.png
+    - assets/images/bangla_epaper_images/e_amadershomoy.png
+    - assets/images/bangla_epaper_images/e_jjdin.jpg
+    - assets/images/bangla_epaper_images/e_inqilab.png
+    - assets/images/bangla_epaper_images/esharebiz.jpg
+    - assets/images/bangla_epaper_images/e_bhorer_kagoj.jpg
+    - assets/images/bangla_epaper_images/e_bangladeshtoday.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -4,14 +4,14 @@ import 'package:newsuniverse/src/data/utils/news_source.dart';
 import 'package:newsuniverse/src/modules/webview/news_webview_screen.dart';
 import 'package:provider/provider.dart';
 
-class NewsScreenGridView extends StatefulWidget {
-  const NewsScreenGridView({super.key});
+class BanglaNewsScreenGridView extends StatefulWidget {
+  const BanglaNewsScreenGridView({super.key});
 
   @override
-  State<NewsScreenGridView> createState() => _NewsScreenGridViewState();
+  State<BanglaNewsScreenGridView> createState() => _BanglaNewsScreenGridViewState();
 }
 
-class _NewsScreenGridViewState extends State<NewsScreenGridView> {
+class _BanglaNewsScreenGridViewState extends State<BanglaNewsScreenGridView> {
   @override
   Widget build(BuildContext context) {
     final newsList =
