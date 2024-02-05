@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/data/global_widgets/grid_view/bangla_epaper_screen_gridview.dart';
+import 'package:newsuniverse/src/data/global_widgets/grid_view/bangla_epapers_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/my_appbar.dart';
 import 'package:newsuniverse/src/modules/favourite/favourite_screen.dart';
 
 import '../../data/global_widgets/bottom_navigation_bar.dart';
-import '../../data/global_widgets/grid_view/bangla_news_screen_gridview.dart';
+import '../../data/global_widgets/grid_view/bangla_newspapers_screen_gridview.dart';
+import '../../data/global_widgets/grid_view/online_newspapers_screen_gridview.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({
@@ -50,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
         ),
         body: currentIndex == 0 ? const DefaultTabController(
-          initialIndex: 1,
+          initialIndex: 0,
           length: 11,
           child: Column(
             children: [
@@ -74,8 +75,9 @@ class _HomeScreenState extends State<HomeScreen> {
               Expanded(
                 child: TabBarView(
                   children: [
-                    BanglaNewsScreenGridView(),
-                    BanglaEpaperScreenGridView(),
+                    BanglaNewspapersScreenGridView(),
+                    BanglaEpapersScreenGridView(),
+                    OnlineNewspapersScreenGridView(),
                   ],
                 ),
               )

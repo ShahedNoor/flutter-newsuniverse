@@ -4,17 +4,17 @@ import 'package:newsuniverse/src/data/utils/news_source.dart';
 import 'package:newsuniverse/src/modules/webview/news_webview_screen.dart';
 import 'package:provider/provider.dart';
 
-class BanglaEpaperScreenGridView extends StatefulWidget {
-  const BanglaEpaperScreenGridView({super.key});
+class BanglaEpapersScreenGridView extends StatefulWidget {
+  const BanglaEpapersScreenGridView({super.key});
 
   @override
-  State<BanglaEpaperScreenGridView> createState() => _BanglaEpaperScreenGridViewState();
+  State<BanglaEpapersScreenGridView> createState() => _BanglaEpapersScreenGridViewState();
 }
 
-class _BanglaEpaperScreenGridViewState extends State<BanglaEpaperScreenGridView> {
+class _BanglaEpapersScreenGridViewState extends State<BanglaEpapersScreenGridView> {
   @override
   Widget build(BuildContext context) {
-    final banglaEaperProvider =
+    final banglaEapersProvider =
         Provider.of<NewsSource>(context, listen: false).banglaEpaperList;
     final favouriteDataProvider =
     Provider.of<FavoriteDataController>(context, listen: false);
@@ -22,7 +22,7 @@ class _BanglaEpaperScreenGridViewState extends State<BanglaEpaperScreenGridView>
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 1.7),
-        itemCount: banglaEaperProvider.length,
+        itemCount: banglaEapersProvider.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
@@ -32,7 +32,7 @@ class _BanglaEpaperScreenGridViewState extends State<BanglaEpaperScreenGridView>
                   context,
                   MaterialPageRoute(
                     builder: (context) => NewsWebView(
-                      url: banglaEaperProvider[index]['newsPaperLink'],
+                      url: banglaEapersProvider[index]['newsPaperLink'],
                     ),
                   ),
                 );
@@ -42,7 +42,7 @@ class _BanglaEpaperScreenGridViewState extends State<BanglaEpaperScreenGridView>
                   color: Colors.white,
                   border: Border.all(color: Colors.black, width: 1),
                   image: DecorationImage(
-                    image: AssetImage(banglaEaperProvider[index]['newsPaperImage']),
+                    image: AssetImage(banglaEapersProvider[index]['newsPaperImage']),
                   ),
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -52,17 +52,17 @@ class _BanglaEpaperScreenGridViewState extends State<BanglaEpaperScreenGridView>
                     onPressed: () {
                       setState(
                             () {
-                              banglaEaperProvider[index]['isFavourite'] =
-                          !banglaEaperProvider[index]['isFavourite'];
+                              banglaEapersProvider[index]['isFavourite'] =
+                          !banglaEapersProvider[index]['isFavourite'];
 
-                          if (banglaEaperProvider[index]['isFavourite']) {
+                          if (banglaEapersProvider[index]['isFavourite']) {
                             favouriteDataProvider
-                                .addToFavorite(banglaEaperProvider[index]);
+                                .addToFavorite(banglaEapersProvider[index]);
                           } else {
                             int favIndex = favouriteDataProvider.favouriteItems
                                 .indexWhere((item) =>
                             item['id'] ==
-                                banglaEaperProvider[index]['id']);
+                                banglaEapersProvider[index]['id']);
                             if (favIndex != -1) {
                               favouriteDataProvider
                                   .removeFromFavourite(favIndex);
@@ -72,7 +72,7 @@ class _BanglaEpaperScreenGridViewState extends State<BanglaEpaperScreenGridView>
                       );
                     },
                     icon: Icon(
-                      banglaEaperProvider[index]['isFavourite']
+                      banglaEapersProvider[index]['isFavourite']
                           ? Icons.favorite
                           : Icons.favorite_border,
                     ),

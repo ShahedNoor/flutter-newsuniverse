@@ -4,17 +4,17 @@ import 'package:newsuniverse/src/data/utils/news_source.dart';
 import 'package:newsuniverse/src/modules/webview/news_webview_screen.dart';
 import 'package:provider/provider.dart';
 
-class BanglaNewsScreenGridView extends StatefulWidget {
-  const BanglaNewsScreenGridView({super.key});
+class BanglaNewspapersScreenGridView extends StatefulWidget {
+  const BanglaNewspapersScreenGridView({super.key});
 
   @override
-  State<BanglaNewsScreenGridView> createState() => _BanglaNewsScreenGridViewState();
+  State<BanglaNewspapersScreenGridView> createState() => _BanglaNewspapersScreenGridViewState();
 }
 
-class _BanglaNewsScreenGridViewState extends State<BanglaNewsScreenGridView> {
+class _BanglaNewspapersScreenGridViewState extends State<BanglaNewspapersScreenGridView> {
   @override
   Widget build(BuildContext context) {
-    final newsList =
+    final banglaNewspapersProvider =
         Provider.of<NewsSource>(context, listen: false).banglaNewsPaperList;
     final favouriteDataProvider =
         Provider.of<FavoriteDataController>(context, listen: false);
@@ -22,7 +22,7 @@ class _BanglaNewsScreenGridViewState extends State<BanglaNewsScreenGridView> {
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 1.7),
-        itemCount: newsList.length,
+        itemCount: banglaNewspapersProvider.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
@@ -32,7 +32,7 @@ class _BanglaNewsScreenGridViewState extends State<BanglaNewsScreenGridView> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => NewsWebView(
-                      url: newsList[index]['newsPaperLink'],
+                      url: banglaNewspapersProvider[index]['newsPaperLink'],
                     ),
                   ),
                 );
@@ -42,7 +42,7 @@ class _BanglaNewsScreenGridViewState extends State<BanglaNewsScreenGridView> {
                   color: Colors.white,
                   border: Border.all(color: Colors.black, width: 1),
                   image: DecorationImage(
-                    image: AssetImage(newsList[index]['newsPaperImage']),
+                    image: AssetImage(banglaNewspapersProvider[index]['newsPaperImage']),
                   ),
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -52,17 +52,17 @@ class _BanglaNewsScreenGridViewState extends State<BanglaNewsScreenGridView> {
                     onPressed: () {
                       setState(
                         () {
-                          newsList[index]['isFavourite'] =
-                              !newsList[index]['isFavourite'];
+                          banglaNewspapersProvider[index]['isFavourite'] =
+                              !banglaNewspapersProvider[index]['isFavourite'];
 
-                          if (newsList[index]['isFavourite']) {
+                          if (banglaNewspapersProvider[index]['isFavourite']) {
                             favouriteDataProvider
-                                .addToFavorite(newsList[index]);
+                                .addToFavorite(banglaNewspapersProvider[index]);
                           } else {
                             int favIndex = favouriteDataProvider.favouriteItems
                                 .indexWhere((item) =>
                                     item['id'] ==
-                                    newsList[index]['id']);
+                                    banglaNewspapersProvider[index]['id']);
                             if (favIndex != -1) {
                               favouriteDataProvider
                                   .removeFromFavourite(favIndex);
@@ -72,7 +72,7 @@ class _BanglaNewsScreenGridViewState extends State<BanglaNewsScreenGridView> {
                       );
                     },
                     icon: Icon(
-                      newsList[index]['isFavourite']
+                      banglaNewspapersProvider[index]['isFavourite']
                           ? Icons.favorite
                           : Icons.favorite_border,
                     ),
