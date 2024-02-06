@@ -153,6 +153,32 @@ flutter:
     - assets/images/tv_channels_images/gazitv.jpg
     - assets/images/tv_channels_images/btv_gov_bd.jpg
     - assets/images/tv_channels_images/gaanbangla_tv.jpg
+#   - Assets for local newspapers
+    - assets/images/local_newspapers_images/dainikazadi.png
+    - assets/images/local_newspapers_images/dainikpurbokone.png
+    - assets/images/local_newspapers_images/dailyamadercomilla.png
+    - assets/images/local_newspapers_images/purbanchal.png
+    - assets/images/local_newspapers_images/coxsbazarnews.png
+    - assets/images/local_newspapers_images/ukhiyanews.jpg
+    - assets/images/local_newspapers_images/khulnanews.png
+    - assets/images/local_newspapers_images/mathabhanga.png
+    - assets/images/local_newspapers_images/rajshahinews24.png
+    - assets/images/local_newspapers_images/chattagramnews.jpg
+    - assets/images/local_newspapers_images/karatoa.jpg
+    - assets/images/local_newspapers_images/dainiksylhet.jpg
+    - assets/images/local_newspapers_images/dailycoxsbazar.jpg
+    - assets/images/local_newspapers_images/uttorpurbo.jpg
+    - assets/images/local_newspapers_images/ajkerjamalpur.jpg
+    - assets/images/local_newspapers_images/amaderbarisal.jpg
+    - assets/images/local_newspapers_images/surmatimes.jpg
+    - assets/images/local_newspapers_images/dailysylhet.jpg
+    - assets/images/local_newspapers_images/chandpurtimes.jpg
+    - assets/images/local_newspapers_images/bograsangbad.jpg
+    - assets/images/local_newspapers_images/sylhetexpress.jpg
+    - assets/images/local_newspapers_images/lakshmipur24.jpg
+    - assets/images/local_newspapers_images/prothom_feni.png
+    - assets/images/local_newspapers_images/gramerkagoj.png
+    - assets/images/local_newspapers_images/khulnanchal.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

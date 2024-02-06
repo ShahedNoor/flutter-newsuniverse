@@ -514,4 +514,158 @@ class NewsSource extends ChangeNotifier{
       "isFavourite": false,
     },
   ];
+
+  dynamic localNewspaperList = [
+    {
+      "id": 0,
+      "newsPaperName": "dainikazadi",
+      "newsPaperImage": "assets/images/local_newspapers_images/dainikazadi.png",
+      "newsPaperLink": "https://dainikazadi.net/",
+      "isFavourite": false,
+    },{
+      "id": 1,
+      "newsPaperName": "dainikpurbokone",
+      "newsPaperImage": "assets/images/local_newspapers_images/dainikpurbokone.png",
+      "newsPaperLink": "https://dainikpurbokone.net/",
+      "isFavourite": false,
+    },{
+      "id": 2,
+      "newsPaperName": "dailyamadercomilla",
+      "newsPaperImage": "assets/images/local_newspapers_images/dailyamadercomilla.png",
+      "newsPaperLink": "https://www.dailyamadercomilla.com/beta/",
+      "isFavourite": false,
+    },{
+      "id": 3,
+      "newsPaperName": "purbanchal",
+      "newsPaperImage": "assets/images/local_newspapers_images/purbanchal.png",
+      "newsPaperLink": "https://purbanchal.com/",
+      "isFavourite": false,
+    },{
+      "id": 4,
+      "newsPaperName": "coxsbazarnews",
+      "newsPaperImage": "assets/images/local_newspapers_images/coxsbazarnews.png",
+      "newsPaperLink": "https://www.coxsbazarnews.com/",
+      "isFavourite": false,
+    },{
+      "id": 5,
+      "newsPaperName": "ukhiyanews",
+      "newsPaperImage": "assets/images/local_newspapers_images/ukhiyanews.jpg",
+      "newsPaperLink": "https://www.ukhiyanews.com/",
+      "isFavourite": false,
+    },{
+      "id": 6,
+      "newsPaperName": "khulnanews",
+      "newsPaperImage": "assets/images/local_newspapers_images/khulnanews.png",
+      "newsPaperLink": "https://khulnanews.com/",
+      "isFavourite": false,
+    },{
+      "id": 7,
+      "newsPaperName": "mathabhanga",
+      "newsPaperImage": "assets/images/local_newspapers_images/mathabhanga.png",
+      "newsPaperLink": "https://www.mathabhanga.com/",
+      "isFavourite": false,
+    },{
+      "id": 8,
+      "newsPaperName": "rajshahinews24",
+      "newsPaperImage": "assets/images/local_newspapers_images/rajshahinews24.png",
+      "newsPaperLink": "https://rajshahinews24.com/",
+      "isFavourite": false,
+    },{
+      "id": 9,
+      "newsPaperName": "chattogramnews",
+      "newsPaperImage": "assets/images/local_newspapers_images/chattagramnews.jpg",
+      "newsPaperLink": "https://chattogramnews.com/",
+      "isFavourite": false,
+    },{
+      "id": 10,
+      "newsPaperName": "dailykaratoa",
+      "newsPaperImage": "assets/images/local_newspapers_images/karatoa.jpg",
+      "newsPaperLink": "https://www.dailykaratoa.com/",
+      "isFavourite": false,
+    },{
+      "id": 11,
+      "newsPaperName": "dainiksylhet",
+      "newsPaperImage": "assets/images/local_newspapers_images/dainiksylhet.jpg",
+      "newsPaperLink": "https://dainiksylhet.com/",
+      "isFavourite": false,
+    },{
+      "id": 12,
+      "newsPaperName": "dailycoxsbazar",
+      "newsPaperImage": "assets/images/local_newspapers_images/dailycoxsbazar.jpg",
+      "newsPaperLink": "https://www.dailycoxsbazar.com/",
+      "isFavourite": false,
+    },{
+      "id": 13,
+      "newsPaperName": "euttorpurbo",
+      "newsPaperImage": "assets/images/local_newspapers_images/uttorpurbo.jpg",
+      "newsPaperLink": "https://euttorpurbo.com/paper/index/2024-02-05",
+      "isFavourite": false,
+    },{
+      "id": 14,
+      "newsPaperName": "ajkerjamalpur",
+      "newsPaperImage": "assets/images/local_newspapers_images/ajkerjamalpur.jpg",
+      "newsPaperLink": "https://ajkerjamalpur.com/",
+      "isFavourite": false,
+    },{
+      "id": 15,
+      "newsPaperName": "amaderbarisal",
+      "newsPaperImage": "assets/images/local_newspapers_images/amaderbarisal.jpg",
+      "newsPaperLink": "https://www.amaderbarisal.com/",
+      "isFavourite": false,
+    },{
+      "id": 16,
+      "newsPaperName": "surmatimes",
+      "newsPaperImage": "assets/images/local_newspapers_images/surmatimes.jpg",
+      "newsPaperLink": "https://surmatimes.com/",
+      "isFavourite": false,
+    },{
+      "id": 17,
+      "newsPaperName": "dailysylhet",
+      "newsPaperImage": "assets/images/local_newspapers_images/dailysylhet.jpg",
+      "newsPaperLink": "https://dailysylhet.com/",
+      "isFavourite": false,
+    },{
+      "id": 18,
+      "newsPaperName": "chandpurtimes",
+      "newsPaperImage": "assets/images/local_newspapers_images/chandpurtimes.jpg",
+      "newsPaperLink": "https://chandpurtimes.com/",
+      "isFavourite": false,
+    },{
+      "id": 19,
+      "newsPaperName": "bograsangbad",
+      "newsPaperImage": "assets/images/local_newspapers_images/bograsangbad.jpg",
+      "newsPaperLink": "https://bograsangbad.com/",
+      "isFavourite": false,
+    },{
+      "id": 20,
+      "newsPaperName": "sylhetexpress",
+      "newsPaperImage": "assets/images/local_newspapers_images/sylhetexpress.jpg",
+      "newsPaperLink": "https://sylhetexpress.net/",
+      "isFavourite": false,
+    },{
+      "id": 21,
+      "newsPaperName": "lakshmipur24",
+      "newsPaperImage": "assets/images/local_newspapers_images/lakshmipur24.jpg",
+      "newsPaperLink": "https://lakshmipur24.com/",
+      "isFavourite": false,
+    },{
+      "id": 22,
+      "newsPaperName": "prothom feni",
+      "newsPaperImage": "assets/images/local_newspapers_images/prothom_feni.png",
+      "newsPaperLink": "https://prothom-feni.com/",
+      "isFavourite": false,
+    },{
+      "id": 23,
+      "newsPaperName": "gramerkagoj",
+      "newsPaperImage": "assets/images/local_newspapers_images/gramerkagoj.png",
+      "newsPaperLink": "https://gramerkagoj.com/",
+      "isFavourite": false,
+    },{
+      "id": 24,
+      "newsPaperName": "khulnanchal",
+      "newsPaperImage": "assets/images/local_newspapers_images/khulnanchal.png",
+      "newsPaperLink": "https://khulnanchal.com/",
+      "isFavourite": false,
+    },
+  ];
 }
