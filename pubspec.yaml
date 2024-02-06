@@ -191,6 +191,23 @@ flutter:
     - assets/images/international_newspapers_images/thefinancialexpress_bd.jpg
     - assets/images/international_newspapers_images/nytimes.jpg
     - assets/images/international_newspapers_images/hindustantimes.jpg
+#   - Assets for radio channels
+    - assets/images/radio_channels_images/voabangla.jpg
+    - assets/images/radio_channels_images/bbc_co_bd.jpg
+    - assets/images/radio_channels_images/dw_de.jpg
+    - assets/images/radio_channels_images/parstoday_ir.jpg
+    - assets/images/radio_channels_images/www3_nhk_or_jp.jpg
+    - assets/images/radio_channels_images/bengali_cri_cn.jpg
+    - assets/images/radio_channels_images/abcradio_fm.jpg
+    - assets/images/radio_channels_images/radiotodaybd_fm.jpg
+    - assets/images/radio_channels_images/unmultimedia.jpg
+    - assets/images/radio_channels_images/dhakafm904.jpg
+    - assets/images/radio_channels_images/radiofoorti_fm.jpg
+    - assets/images/radio_channels_images/betar_bd.jpg
+    - assets/images/radio_channels_images/peoplesradio_fm.jpg
+    - assets/images/radio_channels_images/banglaradio24.jpg
+    - assets/images/radio_channels_images/radiogoongoon.jpg
+    - assets/images/radio_channels_images/jago_fm.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

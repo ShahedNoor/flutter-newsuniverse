@@ -738,4 +738,110 @@ class NewsSource extends ChangeNotifier{
       "isFavourite": false,
     },
   ];
+
+  dynamic radioChannelList = [
+    {
+      "id": 0,
+      "newsPaperName": "voabangla",
+      "newsPaperImage": "assets/images/radio_channels_images/voabangla.jpg",
+      "newsPaperLink": "https://www.voabangla.com/",
+      "isFavourite": false,
+    },{
+      "id": 1,
+      "newsPaperName": "bbc",
+      "newsPaperImage": "assets/images/radio_channels_images/bbc_co_bd.jpg",
+      "newsPaperLink": "https://www.bbc.com/bengali",
+      "isFavourite": false,
+    },{
+      "id": 2,
+      "newsPaperName": "dw",
+      "newsPaperImage": "assets/images/radio_channels_images/dw_de.jpg",
+      "newsPaperLink": "https://www.dw.com/bn/",
+      "isFavourite": false,
+    },{
+      "id": 3,
+      "newsPaperName": "parstoday",
+      "newsPaperImage": "assets/images/radio_channels_images/parstoday_ir.jpg",
+      "newsPaperLink": "https://parstoday.ir/bn",
+      "isFavourite": false,
+    },{
+      "id": 4,
+      "newsPaperName": "nhk",
+      "newsPaperImage": "assets/images/radio_channels_images/www3_nhk_or_jp.jpg",
+      "newsPaperLink": "https://www3.nhk.or.jp/nhkworld/bn/",
+      "isFavourite": false,
+    },{
+      "id": 5,
+      "newsPaperName": "bengali cri",
+      "newsPaperImage": "assets/images/radio_channels_images/bengali_cri_cn.jpg",
+      "newsPaperLink": "https://bengali.cri.cn/",
+      "isFavourite": false,
+    },{
+      "id": 6,
+      "newsPaperName": "abcradio",
+      "newsPaperImage": "assets/images/radio_channels_images/abcradio_fm.jpg",
+      "newsPaperLink": "https://abcradio.fm/",
+      "isFavourite": false,
+    },{
+      "id": 7,
+      "newsPaperName": "radiotodaybd",
+      "newsPaperImage": "assets/images/radio_channels_images/radiotodaybd_fm.jpg",
+      "newsPaperLink": "https://www.radiotodaybd.fm/",
+      "isFavourite": false,
+    },{
+      "id": 8,
+      "newsPaperName": "unmultimedia",
+      "newsPaperImage": "assets/images/radio_channels_images/unmultimedia.jpg",
+      "newsPaperLink": "https://unmultimedia.org/",
+      "isFavourite": false,
+    },{
+      "id": 9,
+      "newsPaperName": "dhakafm904",
+      "newsPaperImage": "assets/images/radio_channels_images/dhakafm904.jpg",
+      "newsPaperLink": "https://dhakafm904.com/",
+      "isFavourite": false,
+    },{
+      "id": 10,
+      "newsPaperName": "radiofoorti",
+      "newsPaperImage": "assets/images/radio_channels_images/radiofoorti_fm.jpg",
+      "newsPaperLink": "https://radiofoorti.fm/",
+      "isFavourite": false,
+    },{
+      "id": 11,
+      "newsPaperName": "betar",
+      "newsPaperImage": "assets/images/radio_channels_images/betar_bd.jpg",
+      "newsPaperLink": "https://betar.gov.bd/",
+      "isFavourite": false,
+    },{
+      "id": 12,
+      "newsPaperName": "peoplesradio",
+      "newsPaperImage": "",
+      "newsPaperLink": "https://peoplesradio.fm/",
+      "isFavourite": false,
+    },{
+      "id": 13,
+      "newsPaperName": "radioshadhin",
+      "newsPaperImage": "assets/images/radio_channels_images/peoplesradio_fm.jpg",
+      "newsPaperLink": "https://radioshadhin.fm/",
+      "isFavourite": false,
+    },{
+      "id": 14,
+      "newsPaperName": "banglaradio24",
+      "newsPaperImage": "assets/images/radio_channels_images/banglaradio24.jpg",
+      "newsPaperLink": "https://banglaradio24.com/",
+      "isFavourite": false,
+    },{
+      "id": 15,
+      "newsPaperName": "radiogoongoon",
+      "newsPaperImage": "assets/images/radio_channels_images/radiogoongoon.jpg",
+      "newsPaperLink": "https://radiogoongoon.com/",
+      "isFavourite": false,
+    },{
+      "id": 16,
+      "newsPaperName": "jago fm",
+      "newsPaperImage": "assets/images/radio_channels_images/jago_fm.jpg",
+      "newsPaperLink": "https://jago.fm/",
+      "isFavourite": false,
+    },
+  ];
 }
