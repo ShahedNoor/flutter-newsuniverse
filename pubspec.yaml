@@ -131,6 +131,28 @@ flutter:
     - assets/images/online_newspapers_images/sunbd24.png
     - assets/images/online_newspapers_images/orthosongbad.jpg
     - assets/images/online_newspapers_images/thedhakapost.jpg
+#   - Assets for TV channels
+    - assets/images/tv_channels_images/channel_i_tv.jpg
+    - assets/images/tv_channels_images/independent24.jpg
+    - assets/images/tv_channels_images/somoynews.jpg
+    - assets/images/tv_channels_images/ntvbd.jpg
+    - assets/images/tv_channels_images/channel24bd.jpg
+    - assets/images/tv_channels_images/rtvonline.jpg
+    - assets/images/tv_channels_images/ekushey_tv.jpg
+    - assets/images/tv_channels_images/atnbangla_tv.jpg
+    - assets/images/tv_channels_images/jamunatelevision.jpg
+    - assets/images/tv_channels_images/satv_tv.jpg
+    - assets/images/tv_channels_images/desh_tv.jpg
+    - assets/images/tv_channels_images/maasranga_tv.jpg
+    - assets/images/tv_channels_images/banglavision_tv.jpg
+    - assets/images/tv_channels_images/ekattor_tv.jpg
+    - assets/images/tv_channels_images/atnnewstv.jpg
+    - assets/images/tv_channels_images/mytvbd_tv.jpg
+    - assets/images/tv_channels_images/boishakhi_tv.jpg
+    - assets/images/tv_channels_images/mohonatv.jpg
+    - assets/images/tv_channels_images/gazitv.jpg
+    - assets/images/tv_channels_images/btv_gov_bd.jpg
+    - assets/images/tv_channels_images/gaanbangla_tv.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

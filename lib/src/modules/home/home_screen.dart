@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsuniverse/src/data/global_widgets/grid_view/bangla_epapers_screen_gridview.dart';
+import 'package:newsuniverse/src/data/global_widgets/grid_view/tv_channels_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/my_appbar.dart';
 import 'package:newsuniverse/src/modules/favourite/favourite_screen.dart';
 
@@ -78,6 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     BanglaNewspapersScreenGridView(),
                     BanglaEpapersScreenGridView(),
                     OnlineNewspapersScreenGridView(),
+                    TvChannelsScreenGridView(),
                   ],
                 ),
               )

@@ -384,4 +384,134 @@ class NewsSource extends ChangeNotifier{
       "isFavourite": false,
     },
   ];
+
+  dynamic tvChannelList = [
+    {
+      "id": 0,
+      "newsPaperName": "channelionline",
+      "newsPaperImage": "assets/images/tv_channels_images/channel_i_tv.jpg",
+      "newsPaperLink": "https://www.channelionline.com/",
+      "isFavourite": false,
+    },{
+      "id": 1,
+      "newsPaperName": "itvbd",
+      "newsPaperImage": "assets/images/tv_channels_images/independent24.jpg",
+      "newsPaperLink": "https://www.itvbd.com/",
+      "isFavourite": false,
+    },{
+      "id": 2,
+      "newsPaperName": "somoynews",
+      "newsPaperImage": "assets/images/tv_channels_images/somoynews.jpg",
+      "newsPaperLink": "https://www.somoynews.tv/",
+      "isFavourite": false,
+    },{
+      "id": 3,
+      "newsPaperName": "ntvbd",
+      "newsPaperImage": "assets/images/tv_channels_images/ntvbd.jpg",
+      "newsPaperLink": "https://www.ntvbd.com/",
+      "isFavourite": false,
+    },{
+      "id": 4,
+      "newsPaperName": "channel24bd",
+      "newsPaperImage": "assets/images/tv_channels_images/channel24bd.jpg",
+      "newsPaperLink": "https://www.channel24bd.tv/",
+      "isFavourite": false,
+    },{
+      "id": 5,
+      "newsPaperName": "rtvonline",
+      "newsPaperImage": "assets/images/tv_channels_images/rtvonline.jpg",
+      "newsPaperLink": "https://www.rtvonline.com/",
+      "isFavourite": false,
+    },{
+      "id": 6,
+      "newsPaperName": "ekushey tv",
+      "newsPaperImage": "assets/images/tv_channels_images/ekushey_tv.jpg",
+      "newsPaperLink": "https://ekushey-tv.com/",
+      "isFavourite": false,
+    },{
+      "id": 7,
+      "newsPaperName": "atnbangla",
+      "newsPaperImage": "assets/images/tv_channels_images/atnbangla_tv.jpg",
+      "newsPaperLink": "https://www.atnbangla.tv/",
+      "isFavourite": false,
+    },{
+      "id": 8,
+      "newsPaperName": "jamuna tv",
+      "newsPaperImage": "assets/images/tv_channels_images/jamunatelevision.jpg",
+      "newsPaperLink": "https://jamuna.tv/",
+      "isFavourite": false,
+    },{
+      "id": 9,
+      "newsPaperName": "satv",
+      "newsPaperImage": "assets/images/tv_channels_images/satv_tv.jpg",
+      "newsPaperLink": "https://www.satv.tv/",
+      "isFavourite": false,
+    },{
+      "id": 10,
+      "newsPaperName": "desh tv",
+      "newsPaperImage": "assets/images/tv_channels_images/desh_tv.jpg",
+      "newsPaperLink": "https://www.desh.tv/",
+      "isFavourite": false,
+    },{
+      "id": 11,
+      "newsPaperName": "maasranga",
+      "newsPaperImage": "assets/images/tv_channels_images/maasranga_tv.jpg",
+      "newsPaperLink": "https://maasranga.tv/",
+      "isFavourite": false,
+    },{
+      "id": 12,
+      "newsPaperName": "bvnews24",
+      "newsPaperImage": "assets/images/tv_channels_images/banglavision_tv.jpg",
+      "newsPaperLink": "https://www.bvnews24.com/",
+      "isFavourite": false,
+    },{
+      "id": 13,
+      "newsPaperName": "ekattor",
+      "newsPaperImage": "assets/images/tv_channels_images/ekattor_tv.jpg",
+      "newsPaperLink": "https://ekattor.tv/",
+      "isFavourite": false,
+    },{
+      "id": 14,
+      "newsPaperName": "atnnewstv",
+      "newsPaperImage": "assets/images/tv_channels_images/atnnewstv.jpg",
+      "newsPaperLink": "https://www.atnnewstv.com/",
+      "isFavourite": false,
+    },{
+      "id": 15,
+      "newsPaperName": "mytvbd",
+      "newsPaperImage": "assets/images/tv_channels_images/mytvbd_tv.jpg",
+      "newsPaperLink": "https://mytvbd.tv/",
+      "isFavourite": false,
+    },{
+      "id": 16,
+      "newsPaperName": "boishakhionline",
+      "newsPaperImage": "assets/images/tv_channels_images/boishakhi_tv.jpg",
+      "newsPaperLink": "https://boishakhionline.com/",
+      "isFavourite": false,
+    },{
+      "id": 17,
+      "newsPaperName": "mohona",
+      "newsPaperImage": "assets/images/tv_channels_images/mohonatv.jpg",
+      "newsPaperLink": "https://mohona.tv/",
+      "isFavourite": false,
+    },{
+      "id": 18,
+      "newsPaperName": "gazitv",
+      "newsPaperImage": "assets/images/tv_channels_images/gazitv.jpg",
+      "newsPaperLink": "https://gazitv.com/",
+      "isFavourite": false,
+    },{
+      "id": 19,
+      "newsPaperName": "btv",
+      "newsPaperImage": "assets/images/tv_channels_images/btv_gov_bd.jpg",
+      "newsPaperLink": "https://btv.gov.bd/",
+      "isFavourite": false,
+    },{
+      "id": 20,
+      "newsPaperName": "gaanbangla",
+      "newsPaperImage": "assets/images/tv_channels_images/gaanbangla_tv.jpg",
+      "newsPaperLink": "https://gaanbangla.tv/",
+      "isFavourite": false,
+    },
+  ];
 }
