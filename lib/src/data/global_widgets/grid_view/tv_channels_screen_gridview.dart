@@ -14,7 +14,7 @@ class TvChannelsScreenGridView extends StatefulWidget {
 class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
   @override
   Widget build(BuildContext context) {
-    final onlineNewspapersProvider =
+    final tvChannelNewspapersProvider =
         Provider.of<NewsSource>(context, listen: false).tvChannelList;
     final favouriteDataProvider =
     Provider.of<FavoriteDataController>(context, listen: false);
@@ -22,7 +22,7 @@ class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 1.7),
-        itemCount: onlineNewspapersProvider.length,
+        itemCount: tvChannelNewspapersProvider.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
@@ -32,7 +32,7 @@ class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => NewsWebView(
-                      url: onlineNewspapersProvider[index]['newsPaperLink'],
+                      url: tvChannelNewspapersProvider[index]['newsPaperLink'],
                     ),
                   ),
                 );
@@ -42,7 +42,7 @@ class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
                   color: Colors.white,
                   border: Border.all(color: Colors.black, width: 1),
                   image: DecorationImage(
-                    image: AssetImage(onlineNewspapersProvider[index]['newsPaperImage']),
+                    image: AssetImage(tvChannelNewspapersProvider[index]['newsPaperImage']),
                   ),
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -52,17 +52,17 @@ class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
                     onPressed: () {
                       setState(
                             () {
-                          onlineNewspapersProvider[index]['isFavourite'] =
-                          !onlineNewspapersProvider[index]['isFavourite'];
+                          tvChannelNewspapersProvider[index]['isFavourite'] =
+                          !tvChannelNewspapersProvider[index]['isFavourite'];
 
-                          if (onlineNewspapersProvider[index]['isFavourite']) {
+                          if (tvChannelNewspapersProvider[index]['isFavourite']) {
                             favouriteDataProvider
-                                .addToFavorite(onlineNewspapersProvider[index]);
+                                .addToFavorite(tvChannelNewspapersProvider[index]);
                           } else {
                             int favIndex = favouriteDataProvider.favouriteItems
                                 .indexWhere((item) =>
                             item['id'] ==
-                                onlineNewspapersProvider[index]['id']);
+                                tvChannelNewspapersProvider[index]['id']);
                             if (favIndex != -1) {
                               favouriteDataProvider
                                   .removeFromFavourite(favIndex);
@@ -72,7 +72,7 @@ class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
                       );
                     },
                     icon: Icon(
-                      onlineNewspapersProvider[index]['isFavourite']
+                      tvChannelNewspapersProvider[index]['isFavourite']
                           ? Icons.favorite
                           : Icons.favorite_border,
                     ),

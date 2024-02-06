@@ -4,25 +4,28 @@ import 'package:newsuniverse/src/data/utils/news_source.dart';
 import 'package:newsuniverse/src/modules/webview/news_webview_screen.dart';
 import 'package:provider/provider.dart';
 
-class LocalNewspapersScreenGridView extends StatefulWidget {
-  const LocalNewspapersScreenGridView({super.key});
+class InternationalNewspapersScreenGridView extends StatefulWidget {
+  const InternationalNewspapersScreenGridView({super.key});
 
   @override
-  State<LocalNewspapersScreenGridView> createState() => _LocalNewspapersScreenGridViewState();
+  State<InternationalNewspapersScreenGridView> createState() =>
+      _InternationalNewspapersScreenGridViewState();
 }
 
-class _LocalNewspapersScreenGridViewState extends State<LocalNewspapersScreenGridView> {
+class _InternationalNewspapersScreenGridViewState
+    extends State<InternationalNewspapersScreenGridView> {
   @override
   Widget build(BuildContext context) {
-    final localNewspapersProvider =
-        Provider.of<NewsSource>(context, listen: false).localNewspaperList;
+    final internationalNewspapersProvider =
+        Provider.of<NewsSource>(context, listen: false)
+            .internationalNewspaperList;
     final favouriteDataProvider =
-    Provider.of<FavoriteDataController>(context, listen: false);
+        Provider.of<FavoriteDataController>(context, listen: false);
     return Expanded(
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 1.7),
-        itemCount: localNewspapersProvider.length,
+        itemCount: internationalNewspapersProvider.length,
         itemBuilder: (context, index) {
           return Padding(
             padding: const EdgeInsets.all(8.0),
@@ -32,7 +35,8 @@ class _LocalNewspapersScreenGridViewState extends State<LocalNewspapersScreenGri
                   context,
                   MaterialPageRoute(
                     builder: (context) => NewsWebView(
-                      url: localNewspapersProvider[index]['newsPaperLink'],
+                      url: internationalNewspapersProvider[index]
+                          ['newsPaperLink'],
                     ),
                   ),
                 );
@@ -42,7 +46,8 @@ class _LocalNewspapersScreenGridViewState extends State<LocalNewspapersScreenGri
                   color: Colors.white,
                   border: Border.all(color: Colors.black, width: 1),
                   image: DecorationImage(
-                    image: AssetImage(localNewspapersProvider[index]['newsPaperImage']),
+                    image: AssetImage(internationalNewspapersProvider[index]
+                        ['newsPaperImage']),
                   ),
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -51,18 +56,22 @@ class _LocalNewspapersScreenGridViewState extends State<LocalNewspapersScreenGri
                   child: IconButton(
                     onPressed: () {
                       setState(
-                            () {
-                          localNewspapersProvider[index]['isFavourite'] =
-                          !localNewspapersProvider[index]['isFavourite'];
+                        () {
+                          internationalNewspapersProvider[index]
+                                  ['isFavourite'] =
+                              !internationalNewspapersProvider[index]
+                                  ['isFavourite'];
 
-                          if (localNewspapersProvider[index]['isFavourite']) {
-                            favouriteDataProvider
-                                .addToFavorite(localNewspapersProvider[index]);
+                          if (internationalNewspapersProvider[index]
+                              ['isFavourite']) {
+                            favouriteDataProvider.addToFavorite(
+                                internationalNewspapersProvider[index]);
                           } else {
                             int favIndex = favouriteDataProvider.favouriteItems
                                 .indexWhere((item) =>
-                            item['id'] ==
-                                localNewspapersProvider[index]['id']);
+                                    item['id'] ==
+                                    internationalNewspapersProvider[index]
+                                        ['id']);
                             if (favIndex != -1) {
                               favouriteDataProvider
                                   .removeFromFavourite(favIndex);
@@ -72,7 +81,7 @@ class _LocalNewspapersScreenGridViewState extends State<LocalNewspapersScreenGri
                       );
                     },
                     icon: Icon(
-                      localNewspapersProvider[index]['isFavourite']
+                      internationalNewspapersProvider[index]['isFavourite']
                           ? Icons.favorite
                           : Icons.favorite_border,
                     ),

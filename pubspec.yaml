@@ -179,6 +179,18 @@ flutter:
     - assets/images/local_newspapers_images/prothom_feni.png
     - assets/images/local_newspapers_images/gramerkagoj.png
     - assets/images/local_newspapers_images/khulnanchal.png
+#   - Assets for international newspapers
+    - assets/images/international_newspapers_images/afp.jpg
+    - assets/images/international_newspapers_images/theguardian.jpg
+    - assets/images/international_newspapers_images/abcnews.jpg
+    - assets/images/international_newspapers_images/thedailystar.jpg
+    - assets/images/international_newspapers_images/themoscowtimes.jpg
+    - assets/images/international_newspapers_images/news_yahoo.jpg
+    - assets/images/international_newspapers_images/daily_sun.jpg
+    - assets/images/international_newspapers_images/thebangladeshtoday.jpg
+    - assets/images/international_newspapers_images/thefinancialexpress_bd.jpg
+    - assets/images/international_newspapers_images/nytimes.jpg
+    - assets/images/international_newspapers_images/hindustantimes.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

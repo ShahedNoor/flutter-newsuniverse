@@ -668,4 +668,74 @@ class NewsSource extends ChangeNotifier{
       "isFavourite": false,
     },
   ];
+
+  dynamic internationalNewspaperList = [
+    {
+      "id": 0,
+      "newsPaperName": "afp",
+      "newsPaperImage": "assets/images/international_newspapers_images/afp.jpg",
+      "newsPaperLink": "https://www.afp.com/",
+      "isFavourite": false,
+    },{
+      "id": 1,
+      "newsPaperName": "theguardian",
+      "newsPaperImage": "assets/images/international_newspapers_images/theguardian.jpg",
+      "newsPaperLink": "https://www.theguardian.com/international",
+      "isFavourite": false,
+    },{
+      "id": 2,
+      "newsPaperName": "abcnews",
+      "newsPaperImage": "assets/images/international_newspapers_images/abcnews.jpg",
+      "newsPaperLink": "https://abcnews.go.com/",
+      "isFavourite": false,
+    },{
+      "id": 3,
+      "newsPaperName": "thedailystar",
+      "newsPaperImage": "assets/images/international_newspapers_images/thedailystar.jpg",
+      "newsPaperLink": "https://www.thedailystar.net/",
+      "isFavourite": false,
+    },{
+      "id": 4,
+      "newsPaperName": "themoscowtimes",
+      "newsPaperImage": "assets/images/international_newspapers_images/themoscowtimes.jpg",
+      "newsPaperLink": "https://www.themoscowtimes.com/",
+      "isFavourite": false,
+    },{
+      "id": 5,
+      "newsPaperName": "yahoo news",
+      "newsPaperImage": "assets/images/international_newspapers_images/news_yahoo.jpg",
+      "newsPaperLink": "https://news.yahoo.com/",
+      "isFavourite": false,
+    },{
+      "id": 6,
+      "newsPaperName": "daily sun",
+      "newsPaperImage": "assets/images/international_newspapers_images/daily_sun.jpg",
+      "newsPaperLink": "https://www.daily-sun.com/",
+      "isFavourite": false,
+    },{
+      "id": 7,
+      "newsPaperName": "thebangladeshtoday",
+      "newsPaperImage": "assets/images/international_newspapers_images/thebangladeshtoday.jpg",
+      "newsPaperLink": "https://thebangladeshtoday.com/",
+      "isFavourite": false,
+    },{
+      "id": 8,
+      "newsPaperName": "thefinancialexpress",
+      "newsPaperImage": "assets/images/international_newspapers_images/thefinancialexpress_bd.jpg",
+      "newsPaperLink": "https://thefinancialexpress.com.bd/",
+      "isFavourite": false,
+    },{
+      "id": 9,
+      "newsPaperName": "nytimes",
+      "newsPaperImage": "assets/images/international_newspapers_images/nytimes.jpg",
+      "newsPaperLink": "https://www.nytimes.com/",
+      "isFavourite": false,
+    },{
+      "id": 10,
+      "newsPaperName": "hindustantimes",
+      "newsPaperImage": "assets/images/international_newspapers_images/hindustantimes.jpg",
+      "newsPaperLink": "https://www.hindustantimes.com/",
+      "isFavourite": false,
+    },
+  ];
 }
