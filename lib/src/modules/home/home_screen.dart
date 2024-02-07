@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:newsuniverse/src/data/global_widgets/grid_view/bangla_epapers_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/grid_view/international_newspapers_screen_gridview.dart';
@@ -12,8 +13,9 @@ import '../../data/global_widgets/grid_view/bangla_newspapers_screen_gridview.da
 import '../../data/global_widgets/grid_view/online_newspapers_screen_gridview.dart';
 
 class HomeScreen extends StatefulWidget {
+  final AdaptiveThemeMode? savedThemeMode;
   const HomeScreen({
-    super.key,
+    super.key, this.savedThemeMode
   });
 
   @override
@@ -21,18 +23,42 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  bool isDarkMode = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return AdaptiveTheme(
+      light: ThemeData.light(useMaterial3: true),
+      dark: ThemeData.dark(useMaterial3: true),
+      initial: widget.savedThemeMode ?? AdaptiveThemeMode.dark,
+      builder: (theme, darkTheme) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: theme,
+        darkTheme: darkTheme,
+        home: ForAdaptiveTheme(),
+      ),
+    );
+  }
+}
+
+class ForAdaptiveTheme extends StatefulWidget {
+  const ForAdaptiveTheme({super.key});
+
+  @override
+  State<ForAdaptiveTheme> createState() => _ForAdaptiveThemeState();
+}
+
+class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
   // Switch Icons
   IconData lightIcon = Icons.light_mode;
   IconData darkIcon = Icons.dark_mode;
+  IconData systemDefault = Icons.android;
 
   int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    final themeManager = AdaptiveTheme.of(context);
+    return Scaffold(
         appBar: MyAppBar(
           leadingIconButton: IconButton(
             onPressed: () {},
@@ -40,11 +66,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           actionIconButton: IconButton(
             onPressed: () {
-              setState(() {
-                isDarkMode = !isDarkMode;
-              });
+              themeManager.toggleThemeMode();
             },
-            icon: Icon(isDarkMode ? darkIcon : lightIcon),
+            icon: Icon(themeManager.mode.isLight ? lightIcon : themeManager.mode.isDark ? darkIcon : systemDefault),
           ),
         ),
         bottomNavigationBar: BottomNavigation(
@@ -54,46 +78,46 @@ class _HomeScreenState extends State<HomeScreen> {
             });
           },
         ),
-        body: currentIndex == 0 ? const DefaultTabController(
-          initialIndex: 0,
-          length: 11,
-          child: Column(
-            children: [
-              TabBar(
-                indicatorColor: Colors.blue,
-                isScrollable: true,
-                tabAlignment: TabAlignment.start,
-                tabs: [
-                  Tab(text: 'Bangla Newspapers'),
-                  Tab(text: 'Bangla Epapers'),
-                  Tab(text: 'Online Newspapers'),
-                  Tab(text: 'TV Channels'),
-                  Tab(text: 'Local Newspapers'),
-                  Tab(text: 'International Newspapers'),
-                  Tab(text: 'Radio Channels'),
-                  Tab(text: 'International TV Channels'),
-                  Tab(text: 'Indian Newspapers'),
-                  Tab(text: 'Magazines'),
-                  Tab(text: 'Job Sites'),
-                ],
-              ),
-              Expanded(
-                child: TabBarView(
+        body: currentIndex == 0
+            ? const DefaultTabController(
+                initialIndex: 0,
+                length: 11,
+                child: Column(
                   children: [
-                    BanglaNewspapersScreenGridView(),
-                    BanglaEpapersScreenGridView(),
-                    OnlineNewspapersScreenGridView(),
-                    TvChannelsScreenGridView(),
-                    LocalNewspapersScreenGridView(),
-                    InternationalNewspapersScreenGridView(),
-                    RadioChannelsScreenGridView(),
+                    TabBar(
+                      indicatorColor: Colors.blue,
+                      isScrollable: true,
+                      tabAlignment: TabAlignment.start,
+                      tabs: [
+                        Tab(text: 'Bangla Newspapers'),
+                        Tab(text: 'Bangla Epapers'),
+                        Tab(text: 'Online Newspapers'),
+                        Tab(text: 'TV Channels'),
+                        Tab(text: 'Local Newspapers'),
+                        Tab(text: 'International Newspapers'),
+                        Tab(text: 'Radio Channels'),
+                        Tab(text: 'International TV Channels'),
+                        Tab(text: 'Indian Newspapers'),
+                        Tab(text: 'Magazines'),
+                        Tab(text: 'Job Sites'),
+                      ],
+                    ),
+                    Expanded(
+                      child: TabBarView(
+                        children: [
+                          BanglaNewspapersScreenGridView(),
+                          BanglaEpapersScreenGridView(),
+                          OnlineNewspapersScreenGridView(),
+                          TvChannelsScreenGridView(),
+                          LocalNewspapersScreenGridView(),
+                          InternationalNewspapersScreenGridView(),
+                          RadioChannelsScreenGridView(),
+                        ],
+                      ),
+                    )
                   ],
                 ),
               )
-            ],
-          ),
-        ) : const FavouriteScreen()
-      ),
-    );
+            : const FavouriteScreen());
   }
 }

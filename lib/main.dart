@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:newsuniverse/src/controller/favourite_data_controller.dart';
 import 'package:newsuniverse/src/controller/starter_screen_controller.dart';
@@ -6,7 +7,9 @@ import 'package:newsuniverse/src/modules/home/home_screen.dart';
 import 'package:newsuniverse/src/modules/starter/starter_screen.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final savedThemeMode = await AdaptiveTheme.getThemeMode();
   runApp(
     MultiProvider(
       providers: [
@@ -14,13 +17,14 @@ void main() {
         ChangeNotifierProvider(create: (context) => NewsSource()),
         ChangeNotifierProvider(create: (context) => FavoriteDataController())
       ],
-      child: const NewsUniverse(),
+      child: NewsUniverse(savedThemeMode: savedThemeMode,),
     ),
   );
 }
 
 class NewsUniverse extends StatefulWidget {
-  const NewsUniverse({super.key});
+  final AdaptiveThemeMode? savedThemeMode;
+  const NewsUniverse({super.key, this.savedThemeMode});
 
   @override
   State<NewsUniverse> createState() => _NewsUniverseState();
@@ -37,14 +41,22 @@ class _NewsUniverseState extends State<NewsUniverse> {
         if (snapshot.hasData) {
           int currentState = snapshot.data!;
 
-          return MaterialApp(
-            title: 'NewsUniverse',
-              debugShowCheckedModeBanner: false,
-              routes: {
-                'starterScreen': (context) => const StarterScreen(),
-                'homeScreen': (context) => const HomeScreen()
-              },
-              initialRoute: currentState == 1 ? 'homeScreen' : 'starterScreen');
+          return AdaptiveTheme(
+            light: ThemeData.light(useMaterial3: true),
+            dark: ThemeData.dark(useMaterial3: true),
+            initial: AdaptiveThemeMode.system,
+            builder: (theme, darkTheme) => MaterialApp(
+                title: 'NewsUniverse',
+                debugShowCheckedModeBanner: false,
+                theme: theme,
+                darkTheme: darkTheme,
+                routes: {
+                  'starterScreen': (context) => const StarterScreen(),
+                  'homeScreen': (context) => HomeScreen(savedThemeMode: widget.savedThemeMode,)
+                },
+                initialRoute:
+                    currentState == 1 ? 'homeScreen' : 'starterScreen'),
+          );
         } else if (snapshot.hasError) {
           // Handle error
           return Text('Error: ${snapshot.error}');

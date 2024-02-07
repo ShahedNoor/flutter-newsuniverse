@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:newsuniverse/src/data/global_widgets/my_appbar.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -13,6 +14,7 @@ class NewsWebView extends StatefulWidget {
 class _NewsWebViewState extends State<NewsWebView> {
   @override
   Widget build(BuildContext context) {
+    final themeManager = AdaptiveTheme.of(context);
     final controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..loadRequest(Uri.parse(widget.url));
@@ -30,6 +32,7 @@ class _NewsWebViewState extends State<NewsWebView> {
     // Switch Icons
     IconData lightIcon = Icons.light_mode;
     IconData darkIcon = Icons.dark_mode;
+    IconData systemDefault = Icons.android;
 
     return WillPopScope(
       onWillPop: goBack,
@@ -46,11 +49,9 @@ class _NewsWebViewState extends State<NewsWebView> {
           ),
           actionIconButton: IconButton(
             onPressed: () {
-              setState(() {
-                isDarkMode = !isDarkMode;
-              });
+              themeManager.toggleThemeMode();
             },
-            icon: Icon(isDarkMode ? darkIcon : lightIcon),
+            icon: Icon(themeManager.mode.isLight ? lightIcon : themeManager.mode.isDark ? darkIcon : systemDefault),
           ),
         ),
         body: WebViewWidget(
