@@ -209,6 +209,17 @@ flutter:
     - assets/images/radio_channels_images/banglaradio24.jpg
     - assets/images/radio_channels_images/radiogoongoon.jpg
     - assets/images/radio_channels_images/jago_fm.jpg
+#   - Assets for international TV channels
+    - assets/images/international_tv_channels_images/edition_cnn.jpg
+    - assets/images/international_tv_channels_images/aljazeera.jpg
+    - assets/images/international_tv_channels_images/ndtv.jpg
+    - assets/images/international_tv_channels_images/reuters.jpg
+    - assets/images/international_tv_channels_images/foxnews.jpg
+    - assets/images/international_tv_channels_images/geo_tv.jpg
+    - assets/images/international_tv_channels_images/news_sky.jpg
+    - assets/images/international_tv_channels_images/euronews.jpg
+    - assets/images/international_tv_channels_images/discovery.jpg
+    - assets/images/international_tv_channels_images/english_cctv_cn.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

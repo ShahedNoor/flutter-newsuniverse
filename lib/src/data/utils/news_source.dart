@@ -844,4 +844,68 @@ class NewsSource extends ChangeNotifier{
       "isFavourite": false,
     },
   ];
+
+  dynamic internationalTvChannelList = [
+    {
+      "id": 0,
+      "newsPaperName": "cnn",
+      "newsPaperImage": "assets/images/international_tv_channels_images/edition_cnn.jpg",
+      "newsPaperLink": "https://edition.cnn.com/",
+      "isFavourite": false,
+    },{
+      "id": 1,
+      "newsPaperName": "aljazeera",
+      "newsPaperImage": "assets/images/international_tv_channels_images/aljazeera.jpg",
+      "newsPaperLink": "https://www.aljazeera.com/",
+      "isFavourite": false,
+    },{
+      "id": 3,
+      "newsPaperName": "ndtv",
+      "newsPaperImage": "assets/images/international_tv_channels_images/ndtv.jpg",
+      "newsPaperLink": "https://www.ndtv.com/",
+      "isFavourite": false,
+    },{
+      "id": 4,
+      "newsPaperName": "reuters",
+      "newsPaperImage": "assets/images/international_tv_channels_images/reuters.jpg",
+      "newsPaperLink": "https://www.reuters.com/",
+      "isFavourite": false,
+    },{
+      "id": 5,
+      "newsPaperName": "foxnews",
+      "newsPaperImage": "assets/images/international_tv_channels_images/foxnews.jpg",
+      "newsPaperLink": "https://www.foxnews.com/",
+      "isFavourite": false,
+    },{
+      "id": 6,
+      "newsPaperName": "geo",
+      "newsPaperImage": "assets/images/international_tv_channels_images/geo_tv.jpg",
+      "newsPaperLink": "https://www.geo.tv/",
+      "isFavourite": false,
+    },{
+      "id": 7,
+      "newsPaperName": "sky",
+      "newsPaperImage": "assets/images/international_tv_channels_images/news_sky.jpg",
+      "newsPaperLink": "https://news.sky.com/",
+      "isFavourite": false,
+    },{
+      "id": 8,
+      "newsPaperName": "euronews",
+      "newsPaperImage": "assets/images/international_tv_channels_images/euronews.jpg",
+      "newsPaperLink": "https://www.euronews.com/",
+      "isFavourite": false,
+    },{
+      "id": 9,
+      "newsPaperName": "discovery",
+      "newsPaperImage": "assets/images/international_tv_channels_images/discovery.jpg",
+      "newsPaperLink": "https://www.discovery.com/",
+      "isFavourite": false,
+    },{
+      "id": 9,
+      "newsPaperName": "cctv",
+      "newsPaperImage": "assets/images/international_tv_channels_images/english_cctv_cn.jpg",
+      "newsPaperLink": "https://english.cctv.com/",
+      "isFavourite": false,
+    },
+  ];
 }
