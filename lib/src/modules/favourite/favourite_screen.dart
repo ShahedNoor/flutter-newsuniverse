@@ -15,6 +15,13 @@ class FavouriteScreen extends StatefulWidget {
 class _FavouriteScreenState extends State<FavouriteScreen> {
   @override
   Widget build(BuildContext context) {
+    // Screen size for responsive design
+    dynamic smallerThan330 = MediaQuery.sizeOf(context).width < 330;
+    dynamic smallerThan435 = MediaQuery.sizeOf(context).width < 435;
+    dynamic smallerThan445 = MediaQuery.sizeOf(context).width < 445;
+    dynamic smallerThan650 = MediaQuery.sizeOf(context).width < 650;
+    dynamic greaterThan649 = MediaQuery.sizeOf(context).width > 649;
+
     final favouriteItemProvider =
         Provider.of<FavoriteDataController>(context, listen: false);
     final newsList =
@@ -42,8 +49,8 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                 )),
           )
         : GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, childAspectRatio: 1.7),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: greaterThan649 ? 3 : 2, childAspectRatio: 1.7),
             itemCount: favouriteItemProvider.favouriteItems.length,
             itemBuilder: (context, index) {
               return Padding(
@@ -71,7 +78,23 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Align(
-                      alignment: const Alignment(1.1, 1.2),
+                      alignment: Alignment(
+                          smallerThan330
+                              ? 1.1
+                              : smallerThan445
+                                  ? 1.0
+                                  : smallerThan650
+                                      ? 0.9
+                                      : 1.0,
+                          smallerThan330
+                              ? 1.4
+                              : smallerThan435
+                                  ? 1.1
+                                  : smallerThan650
+                                      ? 0.9
+                                      : greaterThan649
+                                          ? 1.0
+                                          : 1.2),
                       child: IconButton(
                         onPressed: () {
                           setState(

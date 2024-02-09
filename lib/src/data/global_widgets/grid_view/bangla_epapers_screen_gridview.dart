@@ -8,19 +8,28 @@ class BanglaEpapersScreenGridView extends StatefulWidget {
   const BanglaEpapersScreenGridView({super.key});
 
   @override
-  State<BanglaEpapersScreenGridView> createState() => _BanglaEpapersScreenGridViewState();
+  State<BanglaEpapersScreenGridView> createState() =>
+      _BanglaEpapersScreenGridViewState();
 }
 
-class _BanglaEpapersScreenGridViewState extends State<BanglaEpapersScreenGridView> {
+class _BanglaEpapersScreenGridViewState
+    extends State<BanglaEpapersScreenGridView> {
   @override
   Widget build(BuildContext context) {
+    // Screen size for responsive design
+    dynamic smallerThan330 = MediaQuery.sizeOf(context).width < 330;
+    dynamic smallerThan435 = MediaQuery.sizeOf(context).width < 435;
+    dynamic smallerThan445 = MediaQuery.sizeOf(context).width < 445;
+    dynamic smallerThan650 = MediaQuery.sizeOf(context).width < 650;
+    dynamic greaterThan649 = MediaQuery.sizeOf(context).width > 649;
+
     final banglaEapersProvider =
         Provider.of<NewsSource>(context, listen: false).banglaEpaperList;
     final favouriteDataProvider =
-    Provider.of<FavoriteDataController>(context, listen: false);
+        Provider.of<FavoriteDataController>(context, listen: false);
     return GridView.builder(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, childAspectRatio: 1.7),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: greaterThan649 ? 3 : 2, childAspectRatio: 1.7),
       itemCount: banglaEapersProvider.length,
       itemBuilder: (context, index) {
         return Padding(
@@ -41,18 +50,36 @@ class _BanglaEpapersScreenGridViewState extends State<BanglaEpapersScreenGridVie
                 color: Colors.white,
                 border: Border.all(color: Colors.black, width: 1),
                 image: DecorationImage(
-                  image: AssetImage(banglaEapersProvider[index]['newsPaperImage']),
+                  image:
+                      AssetImage(banglaEapersProvider[index]['newsPaperImage']),
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Align(
-                alignment: const Alignment(1.1, 1.2),
+                alignment: Alignment(
+                  smallerThan330
+                      ? 1.1
+                      : smallerThan445
+                          ? 1.0
+                          : smallerThan650
+                              ? 0.9
+                              : 1.0,
+                  smallerThan330
+                      ? 1.4
+                      : smallerThan435
+                          ? 1.1
+                          : smallerThan650
+                              ? 0.9
+                              : greaterThan649
+                                  ? 1.0
+                                  : 1.2,
+                ),
                 child: IconButton(
                   onPressed: () {
                     setState(
-                          () {
-                            banglaEapersProvider[index]['isFavourite'] =
-                        !banglaEapersProvider[index]['isFavourite'];
+                      () {
+                        banglaEapersProvider[index]['isFavourite'] =
+                            !banglaEapersProvider[index]['isFavourite'];
 
                         if (banglaEapersProvider[index]['isFavourite']) {
                           favouriteDataProvider
@@ -60,11 +87,10 @@ class _BanglaEpapersScreenGridViewState extends State<BanglaEpapersScreenGridVie
                         } else {
                           int favIndex = favouriteDataProvider.favouriteItems
                               .indexWhere((item) =>
-                          item['id'] ==
-                              banglaEapersProvider[index]['id']);
+                                  item['id'] ==
+                                  banglaEapersProvider[index]['id']);
                           if (favIndex != -1) {
-                            favouriteDataProvider
-                                .removeFromFavourite(favIndex);
+                            favouriteDataProvider.removeFromFavourite(favIndex);
                           }
                         }
                       },
