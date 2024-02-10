@@ -220,6 +220,22 @@ flutter:
     - assets/images/international_tv_channels_images/euronews.jpg
     - assets/images/international_tv_channels_images/discovery.jpg
     - assets/images/international_tv_channels_images/english_cctv_cn.jpg
+#    - Assets for Indian newspapers
+    - assets/images/indian_newspapers_images/anandabazar.jpg
+    - assets/images/indian_newspapers_images/aajkaal.jpg
+    - assets/images/indian_newspapers_images/kolkata24x7.png
+    - assets/images/indian_newspapers_images/24ghanta.png
+    - assets/images/indian_newspapers_images/abpananda_abplive.png
+    - assets/images/indian_newspapers_images/ndtv_bangla.png
+    - assets/images/indian_newspapers_images/syandanpatrika.jpg
+    - assets/images/indian_newspapers_images/sangbadpratidin.jpg
+    - assets/images/indian_newspapers_images/bartamanpatrika.jpg
+    - assets/images/indian_newspapers_images/ganashakti.jpg
+    - assets/images/indian_newspapers_images/epaper_eisamay.jpg
+    - assets/images/indian_newspapers_images/uttarbangasambad.jpg
+    - assets/images/indian_newspapers_images/dainiksambad.jpg
+    - assets/images/indian_newspapers_images/aamadermalda.png
+    - assets/images/indian_newspapers_images/ganashakti.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

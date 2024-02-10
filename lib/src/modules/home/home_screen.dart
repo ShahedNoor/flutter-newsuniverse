@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:newsuniverse/src/data/global_widgets/grid_view/bangla_epapers_screen_gridview.dart';
+import 'package:newsuniverse/src/data/global_widgets/grid_view/indian_newspapers_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/grid_view/international_newspapers_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/grid_view/international_tv_channels_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/grid_view/local_newspapers_screen_gridview.dart';
@@ -114,6 +115,7 @@ class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
                           InternationalNewspapersScreenGridView(),
                           RadioChannelsScreenGridView(),
                           InternationalTvChannelsScreenGridView(),
+                          IndianNewspapersScreenGridView(),
                         ],
                       ),
                     )

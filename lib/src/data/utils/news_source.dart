@@ -908,4 +908,98 @@ class NewsSource extends ChangeNotifier{
       "isFavourite": false,
     },
   ];
+
+  dynamic indianNewspaperList = [
+    {
+      "id": 0,
+      "newsPaperName": "anandabazar",
+      "newsPaperImage": "assets/images/indian_newspapers_images/anandabazar.jpg",
+      "newsPaperLink": "https://www.anandabazar.com/",
+      "isFavourite": false,
+    },{
+      "id": 1,
+      "newsPaperName": "aajkaal",
+      "newsPaperImage": "assets/images/indian_newspapers_images/aajkaal.jpg",
+      "newsPaperLink": "https://aajkaal.in/",
+      "isFavourite": false,
+    },{
+      "id": 2,
+      "newsPaperName": "kolkata24x7",
+      "newsPaperImage": "assets/images/indian_newspapers_images/kolkata24x7.png",
+      "newsPaperLink": "https://kolkata24x7.in/",
+      "isFavourite": false,
+    },{
+      "id": 3,
+      "newsPaperName": "zeenews",
+      "newsPaperImage": "assets/images/indian_newspapers_images/24ghanta.png",
+      "newsPaperLink": "https://zeenews.india.com/bengali/",
+      "isFavourite": false,
+    },{
+      "id": 4,
+      "newsPaperName": "abplive",
+      "newsPaperImage": "assets/images/indian_newspapers_images/abpananda_abplive.png",
+      "newsPaperLink": "https://bengali.abplive.com/",
+      "isFavourite": false,
+    },{
+      "id": 5,
+      "newsPaperName": "ndtv",
+      "newsPaperImage": "assets/images/indian_newspapers_images/ndtv_bangla.png",
+      "newsPaperLink": "https://www.ndtv.com/",
+      "isFavourite": false,
+    },{
+      "id": 6,
+      "newsPaperName": "syandanpatrika",
+      "newsPaperImage": "assets/images/indian_newspapers_images/syandanpatrika.jpg",
+      "newsPaperLink": "https://syandanpatrika.com/",
+      "isFavourite": false,
+    },{
+      "id": 7,
+      "newsPaperName": "sangbadpratidin",
+      "newsPaperImage": "assets/images/indian_newspapers_images/sangbadpratidin.jpg",
+      "newsPaperLink": "https://www.sangbadpratidin.in/",
+      "isFavourite": false,
+    },{
+      "id": 8,
+      "newsPaperName": "bartamanpatrika",
+      "newsPaperImage": "assets/images/indian_newspapers_images/bartamanpatrika.jpg",
+      "newsPaperLink": "https://bartamanpatrika.com/home",
+      "isFavourite": false,
+    },{
+      "id": 9,
+      "newsPaperName": "ganashakti",
+      "newsPaperImage": "assets/images/indian_newspapers_images/ganashakti.jpg",
+      "newsPaperLink": "https://ganashakti.com/",
+      "isFavourite": false,
+    },{
+      "id": 10,
+      "newsPaperName": "eisamay",
+      "newsPaperImage": "assets/images/indian_newspapers_images/epaper_eisamay.jpg",
+      "newsPaperLink": "https://eisamay.com/",
+      "isFavourite": false,
+    },{
+      "id": 11,
+      "newsPaperName": "uttarbangasambad",
+      "newsPaperImage": "assets/images/indian_newspapers_images/uttarbangasambad.jpg",
+      "newsPaperLink": "https://uttarbangasambad.com/",
+      "isFavourite": false,
+    },{
+      "id": 12,
+      "newsPaperName": "dainiksambad",
+      "newsPaperImage": "assets/images/indian_newspapers_images/dainiksambad.jpg",
+      "newsPaperLink": "https://dainiksambad.net/",
+      "isFavourite": false,
+    },{
+      "id": 13,
+      "newsPaperName": "aamadermalda",
+      "newsPaperImage": "assets/images/indian_newspapers_images/aamadermalda.png",
+      "newsPaperLink": "https://www.aamadermalda.in/",
+      "isFavourite": false,
+    },{
+      "id": 14,
+      "newsPaperName": "ganashakti",
+      "newsPaperImage": "assets/images/indian_newspapers_images/ganashakti.jpg",
+      "newsPaperLink": "https://bangla.ganashakti.co.in/",
+      "isFavourite": false,
+    },
+  ];
 }
