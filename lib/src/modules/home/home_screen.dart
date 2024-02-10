@@ -5,6 +5,7 @@ import 'package:newsuniverse/src/data/global_widgets/grid_view/indian_newspapers
 import 'package:newsuniverse/src/data/global_widgets/grid_view/international_newspapers_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/grid_view/international_tv_channels_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/grid_view/local_newspapers_screen_gridview.dart';
+import 'package:newsuniverse/src/data/global_widgets/grid_view/magazines_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/grid_view/radio_channels_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/grid_view/tv_channels_screen_gridview.dart';
 import 'package:newsuniverse/src/data/global_widgets/my_appbar.dart';
@@ -100,7 +101,7 @@ class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
                         Tab(text: 'Radio Channels'),
                         Tab(text: 'International TV Channels'),
                         Tab(text: 'Indian Newspapers'),
-                        Tab(text: 'Magazines'),
+                        Tab(text: 'Bangla Magazines'),
                         Tab(text: 'Job Sites'),
                       ],
                     ),
@@ -116,6 +117,7 @@ class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
                           RadioChannelsScreenGridView(),
                           InternationalTvChannelsScreenGridView(),
                           IndianNewspapersScreenGridView(),
+                          MagazineScreenGridView(),
                         ],
                       ),
                     )

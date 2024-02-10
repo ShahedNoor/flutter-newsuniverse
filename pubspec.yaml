@@ -236,6 +236,14 @@ flutter:
     - assets/images/indian_newspapers_images/dainiksambad.jpg
     - assets/images/indian_newspapers_images/aamadermalda.png
     - assets/images/indian_newspapers_images/ganashakti.jpg
+#   - Assets for magazines
+    - assets/images/magazines_images/bangladesherkhela.jpg
+    - assets/images/magazines_images/weeklybangalee.jpg
+    - assets/images/magazines_images/dhakacourier.jpg
+    - assets/images/magazines_images/comjagat.jpg
+    - assets/images/magazines_images/weeklyholiday.jpg
+    - assets/images/magazines_images/kaliokalam.jpg
+    - assets/images/magazines_images/scientificbangladesh.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

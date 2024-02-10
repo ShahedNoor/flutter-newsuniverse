@@ -1002,4 +1002,56 @@ class NewsSource extends ChangeNotifier{
       "isFavourite": false,
     },
   ];
+
+  dynamic magazineList = [
+    {
+      "id": 0,
+      "newsPaperName": "bangladesherkhela",
+      "newsPaperImage": "assets/images/magazines_images/bangladesherkhela.jpg",
+      "newsPaperLink": "https://bangladesherkhela.com/",
+      "isFavourite": false,
+    },{
+      "id": 1,
+      "newsPaperName": "weeklybangalee",
+      "newsPaperImage": "assets/images/magazines_images/weeklybangalee.jpg",
+      "newsPaperLink": "https://weeklybangalee.com/",
+      "isFavourite": false,
+    },{
+      "id": 2,
+      "newsPaperName": "dhakacourier",
+      "newsPaperImage": "assets/images/magazines_images/dhakacourier.jpg",
+      "newsPaperLink": "https://dhakacourier.com.bd/",
+      "isFavourite": false,
+    },{
+      "id": 3,
+      "newsPaperName": "bichitra",
+      "newsPaperImage": "assets/images/magazines_images/bichitra.jpg",
+      "newsPaperLink": "https://www.bichitra.org/",
+      "isFavourite": false,
+    },{
+      "id": 4,
+      "newsPaperName": "comjagat",
+      "newsPaperImage": "assets/images/magazines_images/comjagat.jpg",
+      "newsPaperLink": "https://comjagat.com/",
+      "isFavourite": false,
+    },{
+      "id": 5,
+      "newsPaperName": "weeklyholiday",
+      "newsPaperImage": "assets/images/magazines_images/weeklyholiday.jpg",
+      "newsPaperLink": "https://www.weeklyholiday.net/",
+      "isFavourite": false,
+    },{
+      "id": 6,
+      "newsPaperName": "kaliokalam",
+      "newsPaperImage": "assets/images/magazines_images/kaliokalam.jpg",
+      "newsPaperLink": "https://www.kaliokalam.com/",
+      "isFavourite": false,
+    },{
+      "id": 7,
+      "newsPaperName": "scientificbangladesh",
+      "newsPaperImage": "assets/images/magazines_images/scientificbangladesh.jpg",
+      "newsPaperLink": "https://scientificbangladesh.com/",
+      "isFavourite": false,
+    },
+  ];
 }
