@@ -84,7 +84,7 @@ class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
         body: currentIndex == 0
             ? const DefaultTabController(
                 initialIndex: 0,
-                length: 11,
+                length: 10,
                 child: Column(
                   children: [
                     TabBar(
@@ -101,8 +101,7 @@ class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
                         Tab(text: 'Radio Channels'),
                         Tab(text: 'International TV Channels'),
                         Tab(text: 'Indian Newspapers'),
-                        Tab(text: 'Bangla Magazines'),
-                        Tab(text: 'Job Sites'),
+                        Tab(text: 'Magazines'),
                       ],
                     ),
                     Expanded(
