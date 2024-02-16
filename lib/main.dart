@@ -1,11 +1,11 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/controller/favourite_data_controller.dart';
-import 'package:newsuniverse/src/controller/starter_screen_controller.dart';
-import 'package:newsuniverse/src/data/utils/news_source.dart';
-import 'package:newsuniverse/src/modules/home/home_screen.dart';
-import 'package:newsuniverse/src/modules/starter/starter_screen.dart';
+import 'package:newsuniverse/screens/home_screen.dart';
+import 'package:newsuniverse/screens/starter_screen.dart';
+import 'package:newsuniverse/utils/news_source.dart';
 import 'package:provider/provider.dart';
+import 'controllers/favourite_data_controller.dart';
+import 'controllers/starter_screen_controller.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

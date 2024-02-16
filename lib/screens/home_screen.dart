@@ -1,19 +1,19 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/data/global_widgets/grid_view/bangla_epapers_screen_gridview.dart';
-import 'package:newsuniverse/src/data/global_widgets/grid_view/indian_newspapers_screen_gridview.dart';
-import 'package:newsuniverse/src/data/global_widgets/grid_view/international_newspapers_screen_gridview.dart';
-import 'package:newsuniverse/src/data/global_widgets/grid_view/international_tv_channels_screen_gridview.dart';
-import 'package:newsuniverse/src/data/global_widgets/grid_view/local_newspapers_screen_gridview.dart';
-import 'package:newsuniverse/src/data/global_widgets/grid_view/magazines_screen_gridview.dart';
-import 'package:newsuniverse/src/data/global_widgets/grid_view/radio_channels_screen_gridview.dart';
-import 'package:newsuniverse/src/data/global_widgets/grid_view/tv_channels_screen_gridview.dart';
-import 'package:newsuniverse/src/data/global_widgets/my_appbar.dart';
-import 'package:newsuniverse/src/modules/favourite/favourite_screen.dart';
+import 'package:newsuniverse/screens/favourite_screen.dart';
 
-import '../../data/global_widgets/bottom_navigation_bar.dart';
-import '../../data/global_widgets/grid_view/bangla_newspapers_screen_gridview.dart';
-import '../../data/global_widgets/grid_view/online_newspapers_screen_gridview.dart';
+import '../widgets/global_widgets/bottom_navigation_bar.dart';
+import '../widgets/global_widgets/my_appbar.dart';
+import '../widgets/grid_view/bangla_epapers_screen_gridview.dart';
+import '../widgets/grid_view/bangla_newspapers_screen_gridview.dart';
+import '../widgets/grid_view/indian_newspapers_screen_gridview.dart';
+import '../widgets/grid_view/international_newspapers_screen_gridview.dart';
+import '../widgets/grid_view/international_tv_channels_screen_gridview.dart';
+import '../widgets/grid_view/local_newspapers_screen_gridview.dart';
+import '../widgets/grid_view/magazines_screen_gridview.dart';
+import '../widgets/grid_view/online_newspapers_screen_gridview.dart';
+import '../widgets/grid_view/radio_channels_screen_gridview.dart';
+import '../widgets/grid_view/tv_channels_screen_gridview.dart';
 
 class HomeScreen extends StatefulWidget {
   final AdaptiveThemeMode? savedThemeMode;

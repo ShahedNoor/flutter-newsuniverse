@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/controller/favourite_data_controller.dart';
-import 'package:newsuniverse/src/data/utils/news_source.dart';
-import 'package:newsuniverse/src/modules/webview/news_webview_screen.dart';
+import 'package:newsuniverse/screens/news_webview_screen.dart';
 import 'package:provider/provider.dart';
+import '../../controllers/favourite_data_controller.dart';
+import '../../utils/news_source.dart';
 
-class LocalNewspapersScreenGridView extends StatefulWidget {
-  const LocalNewspapersScreenGridView({super.key});
+class TvChannelsScreenGridView extends StatefulWidget {
+  const TvChannelsScreenGridView({super.key});
 
   @override
-  State<LocalNewspapersScreenGridView> createState() =>
-      _LocalNewspapersScreenGridViewState();
+  State<TvChannelsScreenGridView> createState() =>
+      _TvChannelsScreenGridViewState();
 }
 
-class _LocalNewspapersScreenGridViewState
-    extends State<LocalNewspapersScreenGridView> {
+class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
   @override
   Widget build(BuildContext context) {
     // Screen size for responsive design
@@ -23,14 +22,14 @@ class _LocalNewspapersScreenGridViewState
     dynamic smallerThan650 = MediaQuery.sizeOf(context).width < 650;
     dynamic greaterThan649 = MediaQuery.sizeOf(context).width > 649;
 
-    final localNewspapersProvider =
-        Provider.of<NewsSource>(context, listen: false).localNewspaperList;
+    final tvChannelNewspapersProvider =
+        Provider.of<NewsSource>(context, listen: false).tvChannelList;
     final favouriteDataProvider =
         Provider.of<FavoriteDataController>(context, listen: false);
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: greaterThan649 ? 3 : 2, childAspectRatio: 1.7),
-      itemCount: localNewspapersProvider.length,
+      itemCount: tvChannelNewspapersProvider.length,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.all(8.0),
@@ -40,7 +39,7 @@ class _LocalNewspapersScreenGridViewState
                 context,
                 MaterialPageRoute(
                   builder: (context) => NewsWebView(
-                    url: localNewspapersProvider[index]['newsPaperLink'],
+                    url: tvChannelNewspapersProvider[index]['newsPaperLink'],
                   ),
                 ),
               );
@@ -51,7 +50,7 @@ class _LocalNewspapersScreenGridViewState
                 border: Border.all(color: Colors.black, width: 1),
                 image: DecorationImage(
                   image: AssetImage(
-                      localNewspapersProvider[index]['newsPaperImage']),
+                      tvChannelNewspapersProvider[index]['newsPaperImage']),
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -78,17 +77,17 @@ class _LocalNewspapersScreenGridViewState
                   onPressed: () {
                     setState(
                       () {
-                        localNewspapersProvider[index]['isFavourite'] =
-                            !localNewspapersProvider[index]['isFavourite'];
+                        tvChannelNewspapersProvider[index]['isFavourite'] =
+                            !tvChannelNewspapersProvider[index]['isFavourite'];
 
-                        if (localNewspapersProvider[index]['isFavourite']) {
-                          favouriteDataProvider
-                              .addToFavorite(localNewspapersProvider[index]);
+                        if (tvChannelNewspapersProvider[index]['isFavourite']) {
+                          favouriteDataProvider.addToFavorite(
+                              tvChannelNewspapersProvider[index]);
                         } else {
                           int favIndex = favouriteDataProvider.favouriteItems
                               .indexWhere((item) =>
                                   item['id'] ==
-                                  localNewspapersProvider[index]['id']);
+                                  tvChannelNewspapersProvider[index]['id']);
                           if (favIndex != -1) {
                             favouriteDataProvider.removeFromFavourite(favIndex);
                           }
@@ -97,7 +96,7 @@ class _LocalNewspapersScreenGridViewState
                     );
                   },
                   icon: Icon(
-                    localNewspapersProvider[index]['isFavourite']
+                    tvChannelNewspapersProvider[index]['isFavourite']
                         ? Icons.favorite
                         : Icons.favorite_border,
                   ),

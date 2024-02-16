@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/controller/favourite_data_controller.dart';
-import 'package:newsuniverse/src/data/utils/news_source.dart';
-import 'package:newsuniverse/src/modules/webview/news_webview_screen.dart';
+import 'package:newsuniverse/screens/news_webview_screen.dart';
 import 'package:provider/provider.dart';
+import '../../controllers/favourite_data_controller.dart';
+import '../../utils/news_source.dart';
 
-class MagazineScreenGridView extends StatefulWidget {
-  const MagazineScreenGridView({super.key});
+class LocalNewspapersScreenGridView extends StatefulWidget {
+  const LocalNewspapersScreenGridView({super.key});
 
   @override
-  State<MagazineScreenGridView> createState() =>
-      _MagazineScreenGridViewState();
+  State<LocalNewspapersScreenGridView> createState() =>
+      _LocalNewspapersScreenGridViewState();
 }
 
-class _MagazineScreenGridViewState
-    extends State<MagazineScreenGridView> {
+class _LocalNewspapersScreenGridViewState
+    extends State<LocalNewspapersScreenGridView> {
   @override
   Widget build(BuildContext context) {
     // Screen size for responsive design
@@ -23,14 +23,14 @@ class _MagazineScreenGridViewState
     dynamic smallerThan650 = MediaQuery.sizeOf(context).width < 650;
     dynamic greaterThan649 = MediaQuery.sizeOf(context).width > 649;
 
-    final magazinesProvider =
-        Provider.of<NewsSource>(context, listen: false).magazineList;
+    final localNewspapersProvider =
+        Provider.of<NewsSource>(context, listen: false).localNewspaperList;
     final favouriteDataProvider =
-    Provider.of<FavoriteDataController>(context, listen: false);
+        Provider.of<FavoriteDataController>(context, listen: false);
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: greaterThan649 ? 3 : 2, childAspectRatio: 1.7),
-      itemCount: magazinesProvider.length,
+      itemCount: localNewspapersProvider.length,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.all(8.0),
@@ -40,7 +40,7 @@ class _MagazineScreenGridViewState
                 context,
                 MaterialPageRoute(
                   builder: (context) => NewsWebView(
-                    url: magazinesProvider[index]['newsPaperLink'],
+                    url: localNewspapersProvider[index]['newsPaperLink'],
                   ),
                 ),
               );
@@ -51,7 +51,7 @@ class _MagazineScreenGridViewState
                 border: Border.all(color: Colors.black, width: 1),
                 image: DecorationImage(
                   image: AssetImage(
-                      magazinesProvider[index]['newsPaperImage']),
+                      localNewspapersProvider[index]['newsPaperImage']),
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -60,35 +60,35 @@ class _MagazineScreenGridViewState
                   smallerThan330
                       ? 1.1
                       : smallerThan445
-                      ? 1.0
-                      : smallerThan650
-                      ? 0.9
-                      : 1.0,
+                          ? 1.0
+                          : smallerThan650
+                              ? 0.9
+                              : 1.0,
                   smallerThan330
                       ? 1.4
                       : smallerThan435
-                      ? 1.1
-                      : smallerThan650
-                      ? 0.9
-                      : greaterThan649
-                      ? 1.0
-                      : 1.2,
+                          ? 1.1
+                          : smallerThan650
+                              ? 0.9
+                              : greaterThan649
+                                  ? 1.0
+                                  : 1.2,
                 ),
                 child: IconButton(
                   onPressed: () {
                     setState(
-                          () {
-                        magazinesProvider[index]['isFavourite'] =
-                        !magazinesProvider[index]['isFavourite'];
+                      () {
+                        localNewspapersProvider[index]['isFavourite'] =
+                            !localNewspapersProvider[index]['isFavourite'];
 
-                        if (magazinesProvider[index]['isFavourite']) {
+                        if (localNewspapersProvider[index]['isFavourite']) {
                           favouriteDataProvider
-                              .addToFavorite(magazinesProvider[index]);
+                              .addToFavorite(localNewspapersProvider[index]);
                         } else {
                           int favIndex = favouriteDataProvider.favouriteItems
                               .indexWhere((item) =>
-                          item['id'] ==
-                              magazinesProvider[index]['id']);
+                                  item['id'] ==
+                                  localNewspapersProvider[index]['id']);
                           if (favIndex != -1) {
                             favouriteDataProvider.removeFromFavourite(favIndex);
                           }
@@ -97,10 +97,9 @@ class _MagazineScreenGridViewState
                     );
                   },
                   icon: Icon(
-                    magazinesProvider[index]['isFavourite']
+                    localNewspapersProvider[index]['isFavourite']
                         ? Icons.favorite
                         : Icons.favorite_border,
-                    size: smallerThan330 ? 18 : 24,
                   ),
                 ),
               ),

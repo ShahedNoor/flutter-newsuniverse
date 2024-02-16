@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/controller/favourite_data_controller.dart';
 import 'package:provider/provider.dart';
-
-import '../../data/utils/news_source.dart';
-import '../webview/news_webview_screen.dart';
+import '../controllers/favourite_data_controller.dart';
+import '../utils/news_source.dart';
+import 'news_webview_screen.dart';
 
 class FavouriteScreen extends StatefulWidget {
   const FavouriteScreen({super.key});

@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/controller/favourite_data_controller.dart';
-import 'package:newsuniverse/src/data/utils/news_source.dart';
-import 'package:newsuniverse/src/modules/webview/news_webview_screen.dart';
+import 'package:newsuniverse/screens/news_webview_screen.dart';
 import 'package:provider/provider.dart';
+import '../../controllers/favourite_data_controller.dart';
+import '../../utils/news_source.dart';
 
-class TvChannelsScreenGridView extends StatefulWidget {
-  const TvChannelsScreenGridView({super.key});
+class BanglaNewspapersScreenGridView extends StatefulWidget {
+  const BanglaNewspapersScreenGridView({super.key});
 
   @override
-  State<TvChannelsScreenGridView> createState() =>
-      _TvChannelsScreenGridViewState();
+  State<BanglaNewspapersScreenGridView> createState() =>
+      _BanglaNewspapersScreenGridViewState();
 }
 
-class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
+class _BanglaNewspapersScreenGridViewState
+    extends State<BanglaNewspapersScreenGridView> {
   @override
   Widget build(BuildContext context) {
     // Screen size for responsive design
@@ -22,14 +23,14 @@ class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
     dynamic smallerThan650 = MediaQuery.sizeOf(context).width < 650;
     dynamic greaterThan649 = MediaQuery.sizeOf(context).width > 649;
 
-    final tvChannelNewspapersProvider =
-        Provider.of<NewsSource>(context, listen: false).tvChannelList;
+    final banglaNewspapersProvider =
+        Provider.of<NewsSource>(context, listen: false).banglaNewsPaperList;
     final favouriteDataProvider =
         Provider.of<FavoriteDataController>(context, listen: false);
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: greaterThan649 ? 3 : 2, childAspectRatio: 1.7),
-      itemCount: tvChannelNewspapersProvider.length,
+      itemCount: banglaNewspapersProvider.length,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.all(8.0),
@@ -39,7 +40,7 @@ class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
                 context,
                 MaterialPageRoute(
                   builder: (context) => NewsWebView(
-                    url: tvChannelNewspapersProvider[index]['newsPaperLink'],
+                    url: banglaNewspapersProvider[index]['newsPaperLink'],
                   ),
                 ),
               );
@@ -50,7 +51,7 @@ class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
                 border: Border.all(color: Colors.black, width: 1),
                 image: DecorationImage(
                   image: AssetImage(
-                      tvChannelNewspapersProvider[index]['newsPaperImage']),
+                      banglaNewspapersProvider[index]['newsPaperImage']),
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -77,17 +78,17 @@ class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
                   onPressed: () {
                     setState(
                       () {
-                        tvChannelNewspapersProvider[index]['isFavourite'] =
-                            !tvChannelNewspapersProvider[index]['isFavourite'];
+                        banglaNewspapersProvider[index]['isFavourite'] =
+                            !banglaNewspapersProvider[index]['isFavourite'];
 
-                        if (tvChannelNewspapersProvider[index]['isFavourite']) {
-                          favouriteDataProvider.addToFavorite(
-                              tvChannelNewspapersProvider[index]);
+                        if (banglaNewspapersProvider[index]['isFavourite']) {
+                          favouriteDataProvider
+                              .addToFavorite(banglaNewspapersProvider[index]);
                         } else {
                           int favIndex = favouriteDataProvider.favouriteItems
                               .indexWhere((item) =>
                                   item['id'] ==
-                                  tvChannelNewspapersProvider[index]['id']);
+                                  banglaNewspapersProvider[index]['id']);
                           if (favIndex != -1) {
                             favouriteDataProvider.removeFromFavourite(favIndex);
                           }
@@ -96,9 +97,10 @@ class _TvChannelsScreenGridViewState extends State<TvChannelsScreenGridView> {
                     );
                   },
                   icon: Icon(
-                    tvChannelNewspapersProvider[index]['isFavourite']
+                    banglaNewspapersProvider[index]['isFavourite']
                         ? Icons.favorite
                         : Icons.favorite_border,
+                    size: smallerThan330 ? 18 : 24,
                   ),
                 ),
               ),

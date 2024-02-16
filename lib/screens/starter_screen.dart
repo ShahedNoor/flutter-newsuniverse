@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/controller/starter_screen_controller.dart';
 import 'package:provider/provider.dart';
+
+import '../controllers/starter_screen_controller.dart';
+
 
 class StarterScreen extends StatefulWidget {
   const StarterScreen({super.key});

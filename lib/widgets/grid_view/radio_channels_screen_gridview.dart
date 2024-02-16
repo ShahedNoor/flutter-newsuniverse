@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/controller/favourite_data_controller.dart';
-import 'package:newsuniverse/src/data/utils/news_source.dart';
-import 'package:newsuniverse/src/modules/webview/news_webview_screen.dart';
+import 'package:newsuniverse/screens/news_webview_screen.dart';
 import 'package:provider/provider.dart';
+import '../../controllers/favourite_data_controller.dart';
+import '../../utils/news_source.dart';
 
-class OnlineNewspapersScreenGridView extends StatefulWidget {
-  const OnlineNewspapersScreenGridView({super.key});
+class RadioChannelsScreenGridView extends StatefulWidget {
+  const RadioChannelsScreenGridView({super.key});
 
   @override
-  State<OnlineNewspapersScreenGridView> createState() =>
-      _OnlineNewspapersScreenGridViewState();
+  State<RadioChannelsScreenGridView> createState() =>
+      _RadioChannelsScreenGridViewState();
 }
 
-class _OnlineNewspapersScreenGridViewState
-    extends State<OnlineNewspapersScreenGridView> {
+class _RadioChannelsScreenGridViewState
+    extends State<RadioChannelsScreenGridView> {
   @override
   Widget build(BuildContext context) {
     // Screen size for responsive design
@@ -23,14 +23,14 @@ class _OnlineNewspapersScreenGridViewState
     dynamic smallerThan650 = MediaQuery.sizeOf(context).width < 650;
     dynamic greaterThan649 = MediaQuery.sizeOf(context).width > 649;
 
-    final onlineNewspapersProvider =
-        Provider.of<NewsSource>(context, listen: false).onlineNewspaperList;
+    final radioChannelsProvider =
+        Provider.of<NewsSource>(context, listen: false).radioChannelList;
     final favouriteDataProvider =
         Provider.of<FavoriteDataController>(context, listen: false);
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: greaterThan649 ? 3 : 2, childAspectRatio: 1.7),
-      itemCount: onlineNewspapersProvider.length,
+      itemCount: radioChannelsProvider.length,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.all(8.0),
@@ -40,7 +40,7 @@ class _OnlineNewspapersScreenGridViewState
                 context,
                 MaterialPageRoute(
                   builder: (context) => NewsWebView(
-                    url: onlineNewspapersProvider[index]['newsPaperLink'],
+                    url: radioChannelsProvider[index]['newsPaperLink'],
                   ),
                 ),
               );
@@ -51,7 +51,7 @@ class _OnlineNewspapersScreenGridViewState
                 border: Border.all(color: Colors.black, width: 1),
                 image: DecorationImage(
                   image: AssetImage(
-                      onlineNewspapersProvider[index]['newsPaperImage']),
+                      radioChannelsProvider[index]['newsPaperImage']),
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -78,17 +78,17 @@ class _OnlineNewspapersScreenGridViewState
                   onPressed: () {
                     setState(
                       () {
-                        onlineNewspapersProvider[index]['isFavourite'] =
-                            !onlineNewspapersProvider[index]['isFavourite'];
+                        radioChannelsProvider[index]['isFavourite'] =
+                            !radioChannelsProvider[index]['isFavourite'];
 
-                        if (onlineNewspapersProvider[index]['isFavourite']) {
+                        if (radioChannelsProvider[index]['isFavourite']) {
                           favouriteDataProvider
-                              .addToFavorite(onlineNewspapersProvider[index]);
+                              .addToFavorite(radioChannelsProvider[index]);
                         } else {
                           int favIndex = favouriteDataProvider.favouriteItems
                               .indexWhere((item) =>
                                   item['id'] ==
-                                  onlineNewspapersProvider[index]['id']);
+                                  radioChannelsProvider[index]['id']);
                           if (favIndex != -1) {
                             favouriteDataProvider.removeFromFavourite(favIndex);
                           }
@@ -97,7 +97,7 @@ class _OnlineNewspapersScreenGridViewState
                     );
                   },
                   icon: Icon(
-                    onlineNewspapersProvider[index]['isFavourite']
+                    radioChannelsProvider[index]['isFavourite']
                         ? Icons.favorite
                         : Icons.favorite_border,
                   ),

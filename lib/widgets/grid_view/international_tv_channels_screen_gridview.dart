@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/controller/favourite_data_controller.dart';
-import 'package:newsuniverse/src/data/utils/news_source.dart';
-import 'package:newsuniverse/src/modules/webview/news_webview_screen.dart';
+import 'package:newsuniverse/screens/news_webview_screen.dart';
 import 'package:provider/provider.dart';
 
-class InternationalNewspapersScreenGridView extends StatefulWidget {
-  const InternationalNewspapersScreenGridView({super.key});
+import '../../controllers/favourite_data_controller.dart';
+import '../../utils/news_source.dart';
+
+class InternationalTvChannelsScreenGridView extends StatefulWidget {
+  const InternationalTvChannelsScreenGridView({super.key});
 
   @override
-  State<InternationalNewspapersScreenGridView> createState() =>
-      _InternationalNewspapersScreenGridViewState();
+  State<InternationalTvChannelsScreenGridView> createState() =>
+      _InternationalTvChannelsScreenGridViewState();
 }
 
-class _InternationalNewspapersScreenGridViewState
-    extends State<InternationalNewspapersScreenGridView> {
+class _InternationalTvChannelsScreenGridViewState
+    extends State<InternationalTvChannelsScreenGridView> {
   @override
   Widget build(BuildContext context) {
     // Screen size for responsive design
@@ -23,15 +24,14 @@ class _InternationalNewspapersScreenGridViewState
     dynamic smallerThan650 = MediaQuery.sizeOf(context).width < 650;
     dynamic greaterThan649 = MediaQuery.sizeOf(context).width > 649;
 
-    final internationalNewspapersProvider =
-        Provider.of<NewsSource>(context, listen: false)
-            .internationalNewspaperList;
+    final internationalTvChannelsProvider =
+        Provider.of<NewsSource>(context, listen: false).internationalTvChannelList;
     final favouriteDataProvider =
-        Provider.of<FavoriteDataController>(context, listen: false);
+    Provider.of<FavoriteDataController>(context, listen: false);
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: greaterThan649 ? 3 : 2, childAspectRatio: 1.7),
-      itemCount: internationalNewspapersProvider.length,
+      itemCount: internationalTvChannelsProvider.length,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.all(8.0),
@@ -41,8 +41,7 @@ class _InternationalNewspapersScreenGridViewState
                 context,
                 MaterialPageRoute(
                   builder: (context) => NewsWebView(
-                    url: internationalNewspapersProvider[index]
-                        ['newsPaperLink'],
+                    url: internationalTvChannelsProvider[index]['newsPaperLink'],
                   ),
                 ),
               );
@@ -53,7 +52,7 @@ class _InternationalNewspapersScreenGridViewState
                 border: Border.all(color: Colors.black, width: 1),
                 image: DecorationImage(
                   image: AssetImage(
-                      internationalNewspapersProvider[index]['newsPaperImage']),
+                      internationalTvChannelsProvider[index]['newsPaperImage']),
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -62,37 +61,35 @@ class _InternationalNewspapersScreenGridViewState
                   smallerThan330
                       ? 1.1
                       : smallerThan445
-                          ? 1.0
-                          : smallerThan650
-                              ? 0.9
-                              : 1.0,
+                      ? 1.0
+                      : smallerThan650
+                      ? 0.9
+                      : 1.0,
                   smallerThan330
                       ? 1.4
                       : smallerThan435
-                          ? 1.1
-                          : smallerThan650
-                              ? 0.9
-                              : greaterThan649
-                                  ? 1.0
-                                  : 1.2,
+                      ? 1.1
+                      : smallerThan650
+                      ? 0.9
+                      : greaterThan649
+                      ? 1.0
+                      : 1.2,
                 ),
                 child: IconButton(
                   onPressed: () {
                     setState(
-                      () {
-                        internationalNewspapersProvider[index]['isFavourite'] =
-                            !internationalNewspapersProvider[index]
-                                ['isFavourite'];
+                          () {
+                        internationalTvChannelsProvider[index]['isFavourite'] =
+                        !internationalTvChannelsProvider[index]['isFavourite'];
 
-                        if (internationalNewspapersProvider[index]
-                            ['isFavourite']) {
-                          favouriteDataProvider.addToFavorite(
-                              internationalNewspapersProvider[index]);
+                        if (internationalTvChannelsProvider[index]['isFavourite']) {
+                          favouriteDataProvider
+                              .addToFavorite(internationalTvChannelsProvider[index]);
                         } else {
                           int favIndex = favouriteDataProvider.favouriteItems
                               .indexWhere((item) =>
-                                  item['id'] ==
-                                  internationalNewspapersProvider[index]['id']);
+                          item['id'] ==
+                              internationalTvChannelsProvider[index]['id']);
                           if (favIndex != -1) {
                             favouriteDataProvider.removeFromFavourite(favIndex);
                           }
@@ -101,9 +98,10 @@ class _InternationalNewspapersScreenGridViewState
                     );
                   },
                   icon: Icon(
-                    internationalNewspapersProvider[index]['isFavourite']
+                    internationalTvChannelsProvider[index]['isFavourite']
                         ? Icons.favorite
                         : Icons.favorite_border,
+                    size: smallerThan330 ? 18 : 24,
                   ),
                 ),
               ),

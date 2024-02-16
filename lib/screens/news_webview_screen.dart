@@ -1,7 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:newsuniverse/src/data/global_widgets/my_appbar.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import '../widgets/global_widgets/my_appbar.dart';
 
 class NewsWebView extends StatefulWidget {
   final String url;
