@@ -36,6 +36,8 @@ dependencies:
   shared_preferences: ^2.2.2
   provider: ^6.1.1
   adaptive_theme: ^3.6.0
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -45,6 +47,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.9
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -66,9 +70,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-#   - Assets for starter screen
+    #   - Assets for starter screen
     - assets/images/starter_icon/starter_icon.png
-#   - Assets for bangla newspapers
+    #   - Assets for bangla newspapers
     - assets/images/bangla_newspapers_images/prothom_alo.jpg
     - assets/images/bangla_newspapers_images/ittefaq.jpg
     - assets/images/bangla_newspapers_images/jugantor.jpg
@@ -93,7 +97,7 @@ flutter:
     - assets/images/bangla_newspapers_images/kalbela.png
     - assets/images/bangla_newspapers_images/ajkalerkhobor.jpg
     - assets/images/bangla_newspapers_images/dainik_bangla.jpg
-#   - Assets for bangla epapers
+    #   - Assets for bangla epapers
     - assets/images/bangla_epapers_images/e_prothom_alo.png
     - assets/images/bangla_epapers_images/e_pratidin.jpg
     - assets/images/bangla_epapers_images/epaper_jugantor.jpg
@@ -109,7 +113,7 @@ flutter:
     - assets/images/bangla_epapers_images/esharebiz.jpg
     - assets/images/bangla_epapers_images/e_bhorer_kagoj.jpg
     - assets/images/bangla_epapers_images/e_bangladeshtoday.jpg
-#   - Assets for online epapers
+    #   - Assets for online epapers
     - assets/images/online_newspapers_images/bdnews24.jpg
     - assets/images/online_newspapers_images/banglanews24.jpg
     - assets/images/online_newspapers_images/jagonews24.jpg
@@ -133,7 +137,7 @@ flutter:
     - assets/images/online_newspapers_images/sunbd24.png
     - assets/images/online_newspapers_images/orthosongbad.jpg
     - assets/images/online_newspapers_images/thedhakapost.jpg
-#   - Assets for TV channels
+    #   - Assets for TV channels
     - assets/images/tv_channels_images/channel_i_tv.jpg
     - assets/images/tv_channels_images/independent24.jpg
     - assets/images/tv_channels_images/somoynews.jpg
@@ -155,7 +159,7 @@ flutter:
     - assets/images/tv_channels_images/gazitv.jpg
     - assets/images/tv_channels_images/btv_gov_bd.jpg
     - assets/images/tv_channels_images/gaanbangla_tv.jpg
-#   - Assets for local newspapers
+    #   - Assets for local newspapers
     - assets/images/local_newspapers_images/dainikazadi.png
     - assets/images/local_newspapers_images/dainikpurbokone.png
     - assets/images/local_newspapers_images/dailyamadercomilla.png
@@ -181,7 +185,7 @@ flutter:
     - assets/images/local_newspapers_images/prothom_feni.png
     - assets/images/local_newspapers_images/gramerkagoj.png
     - assets/images/local_newspapers_images/khulnanchal.png
-#   - Assets for international newspapers
+    #   - Assets for international newspapers
     - assets/images/international_newspapers_images/afp.jpg
     - assets/images/international_newspapers_images/theguardian.jpg
     - assets/images/international_newspapers_images/abcnews.jpg
@@ -193,7 +197,7 @@ flutter:
     - assets/images/international_newspapers_images/thefinancialexpress_bd.jpg
     - assets/images/international_newspapers_images/nytimes.jpg
     - assets/images/international_newspapers_images/hindustantimes.jpg
-#   - Assets for radio channels
+    #   - Assets for radio channels
     - assets/images/radio_channels_images/voabangla.jpg
     - assets/images/radio_channels_images/bbc_co_bd.jpg
     - assets/images/radio_channels_images/dw_de.jpg
@@ -210,7 +214,7 @@ flutter:
     - assets/images/radio_channels_images/banglaradio24.jpg
     - assets/images/radio_channels_images/radiogoongoon.jpg
     - assets/images/radio_channels_images/jago_fm.jpg
-#   - Assets for international TV channels
+    #   - Assets for international TV channels
     - assets/images/international_tv_channels_images/edition_cnn.jpg
     - assets/images/international_tv_channels_images/aljazeera.jpg
     - assets/images/international_tv_channels_images/ndtv.jpg
@@ -221,7 +225,7 @@ flutter:
     - assets/images/international_tv_channels_images/euronews.jpg
     - assets/images/international_tv_channels_images/discovery.jpg
     - assets/images/international_tv_channels_images/english_cctv_cn.jpg
-#    - Assets for Indian newspapers
+    #    - Assets for Indian newspapers
     - assets/images/indian_newspapers_images/anandabazar.jpg
     - assets/images/indian_newspapers_images/aajkaal.jpg
     - assets/images/indian_newspapers_images/kolkata24x7.png
@@ -237,7 +241,7 @@ flutter:
     - assets/images/indian_newspapers_images/dainiksambad.jpg
     - assets/images/indian_newspapers_images/aamadermalda.png
     - assets/images/indian_newspapers_images/ganashakti.jpg
-#   - Assets for magazines
+    #   - Assets for magazines
     - assets/images/magazines_images/bangladesherkhela.jpg
     - assets/images/magazines_images/weeklybangalee.jpg
     - assets/images/magazines_images/dhakacourier.jpg
