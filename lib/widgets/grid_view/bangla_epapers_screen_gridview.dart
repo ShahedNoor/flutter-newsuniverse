@@ -23,14 +23,14 @@ class _BanglaEpapersScreenGridViewState
     dynamic smallerThan650 = MediaQuery.sizeOf(context).width < 650;
     dynamic greaterThan649 = MediaQuery.sizeOf(context).width > 649;
 
-    final banglaEapersProvider =
+    final banglaEpapersProvider =
         Provider.of<NewsSource>(context, listen: false).banglaEpaperList;
     final favouriteDataProvider =
         Provider.of<FavoriteDataController>(context, listen: false);
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: greaterThan649 ? 3 : 2, childAspectRatio: 1.7),
-      itemCount: banglaEapersProvider.length,
+      itemCount: banglaEpapersProvider.length,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.all(8.0),
@@ -40,7 +40,7 @@ class _BanglaEpapersScreenGridViewState
                 context,
                 MaterialPageRoute(
                   builder: (context) => NewsWebView(
-                    url: banglaEapersProvider[index]['newsPaperLink'],
+                    url: banglaEpapersProvider[index]['newsPaperLink'],
                   ),
                 ),
               );
@@ -50,8 +50,8 @@ class _BanglaEpapersScreenGridViewState
                 color: Colors.white,
                 border: Border.all(color: Colors.black, width: 1),
                 image: DecorationImage(
-                  image:
-                      AssetImage(banglaEapersProvider[index]['newsPaperImage']),
+                  image: AssetImage(
+                      banglaEpapersProvider[index]['newsPaperImage']),
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -78,17 +78,17 @@ class _BanglaEpapersScreenGridViewState
                   onPressed: () {
                     setState(
                       () {
-                        banglaEapersProvider[index]['isFavourite'] =
-                            !banglaEapersProvider[index]['isFavourite'];
+                        banglaEpapersProvider[index]['isFavourite'] =
+                            !banglaEpapersProvider[index]['isFavourite'];
 
-                        if (banglaEapersProvider[index]['isFavourite']) {
+                        if (banglaEpapersProvider[index]['isFavourite']) {
                           favouriteDataProvider
-                              .addToFavorite(banglaEapersProvider[index]);
+                              .addToFavorite(banglaEpapersProvider[index]);
                         } else {
                           int favIndex = favouriteDataProvider.favouriteItems
                               .indexWhere((item) =>
                                   item['id'] ==
-                                  banglaEapersProvider[index]['id']);
+                                  banglaEpapersProvider[index]['id']);
                           if (favIndex != -1) {
                             favouriteDataProvider.removeFromFavourite(favIndex);
                           }
@@ -97,7 +97,7 @@ class _BanglaEpapersScreenGridViewState
                     );
                   },
                   icon: Icon(
-                    banglaEapersProvider[index]['isFavourite']
+                    banglaEpapersProvider[index]['isFavourite']
                         ? Icons.favorite
                         : Icons.favorite_border,
                   ),

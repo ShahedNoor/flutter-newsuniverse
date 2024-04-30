@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-  final leadingIconButton;
-  final actionIconButton;
-  MyAppBar({super.key, this.leadingIconButton, required this.actionIconButton});
+  final dynamic leadingIconButton;
+  final dynamic actionIconButton;
+
+  const MyAppBar(
+      {super.key, this.leadingIconButton, required this.actionIconButton});
 
   @override
   State<MyAppBar> createState() => _MyAppBarState();

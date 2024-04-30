@@ -17,16 +17,14 @@ import '../widgets/grid_view/tv_channels_screen_gridview.dart';
 
 class HomeScreen extends StatefulWidget {
   final AdaptiveThemeMode? savedThemeMode;
-  const HomeScreen({
-    super.key, this.savedThemeMode
-  });
+
+  const HomeScreen({super.key, this.savedThemeMode});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
   @override
   Widget build(BuildContext context) {
     return AdaptiveTheme(
@@ -62,67 +60,73 @@ class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
   Widget build(BuildContext context) {
     final themeManager = AdaptiveTheme.of(context);
     return Scaffold(
-        appBar: MyAppBar(
-          leadingIconButton: IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.search),
-          ),
-          actionIconButton: IconButton(
-            onPressed: () {
-              themeManager.toggleThemeMode();
-            },
-            icon: Icon(themeManager.mode.isLight ? lightIcon : themeManager.mode.isDark ? darkIcon : systemDefault),
-          ),
+      appBar: MyAppBar(
+        leadingIconButton: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.search),
         ),
-        bottomNavigationBar: BottomNavigation(
-          onTabTapped: (index) {
-            setState(() {
-              currentIndex = index;
-            });
+        actionIconButton: IconButton(
+          onPressed: () {
+            themeManager.toggleThemeMode();
           },
+          icon: Icon(themeManager.mode.isLight
+              ? lightIcon
+              : themeManager.mode.isDark
+                  ? darkIcon
+                  : systemDefault),
         ),
-        body: currentIndex == 0
-            ? const DefaultTabController(
-                initialIndex: 0,
-                length: 10,
-                child: Column(
-                  children: [
-                    TabBar(
-                      indicatorColor: Colors.blue,
-                      isScrollable: true,
-                      tabAlignment: TabAlignment.start,
-                      tabs: [
-                        Tab(text: 'Bangla Newspapers'),
-                        Tab(text: 'Bangla Epapers'),
-                        Tab(text: 'Online Newspapers'),
-                        Tab(text: 'TV Channels'),
-                        Tab(text: 'Local Newspapers'),
-                        Tab(text: 'International Newspapers'),
-                        Tab(text: 'Radio Channels'),
-                        Tab(text: 'International TV Channels'),
-                        Tab(text: 'Indian Newspapers'),
-                        Tab(text: 'Magazines'),
+      ),
+      bottomNavigationBar: BottomNavigation(
+        onTabTapped: (index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+      ),
+      body: currentIndex == 0
+          ? const DefaultTabController(
+              initialIndex: 0,
+              length: 10,
+              child: Column(
+                children: [
+                  TabBar(
+                    labelColor: Colors.blue,
+                    indicatorColor: Colors.blue,
+                    isScrollable: true,
+                    tabAlignment: TabAlignment.start,
+                    tabs: [
+                      Tab(text: 'Bangla Newspapers'),
+                      Tab(text: 'Bangla Epapers'),
+                      Tab(text: 'Online Newspapers'),
+                      Tab(text: 'TV Channels'),
+                      Tab(text: 'Local Newspapers'),
+                      Tab(text: 'International Newspapers'),
+                      Tab(text: 'Radio Channels'),
+                      Tab(text: 'International TV Channels'),
+                      Tab(text: 'Indian Newspapers'),
+                      Tab(text: 'Magazines'),
+                    ],
+                  ),
+                  Expanded(
+                    child: TabBarView(
+                      children: [
+                        BanglaNewspapersScreenGridView(),
+                        BanglaEpapersScreenGridView(),
+                        OnlineNewspapersScreenGridView(),
+                        TvChannelsScreenGridView(),
+                        LocalNewspapersScreenGridView(),
+                        InternationalNewspapersScreenGridView(),
+                        RadioChannelsScreenGridView(),
+                        InternationalTvChannelsScreenGridView(),
+                        IndianNewspapersScreenGridView(),
+                        MagazineScreenGridView(),
                       ],
                     ),
-                    Expanded(
-                      child: TabBarView(
-                        children: [
-                          BanglaNewspapersScreenGridView(),
-                          BanglaEpapersScreenGridView(),
-                          OnlineNewspapersScreenGridView(),
-                          TvChannelsScreenGridView(),
-                          LocalNewspapersScreenGridView(),
-                          InternationalNewspapersScreenGridView(),
-                          RadioChannelsScreenGridView(),
-                          InternationalTvChannelsScreenGridView(),
-                          IndianNewspapersScreenGridView(),
-                          MagazineScreenGridView(),
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              )
-            : const FavouriteScreen());
+                  )
+                ],
+              ),
+            )
+          : const FavouriteScreen(),
+    );
   }
 }
