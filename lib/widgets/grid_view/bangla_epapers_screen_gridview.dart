@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:newsuniverse/screens/news_webview_screen.dart';
 import 'package:provider/provider.dart';
 import '../../controllers/favourite_data_controller.dart';
-import '../../utils/news_source.dart';
+import '../../data/news_source.dart';
 
 class BanglaEpapersScreenGridView extends StatefulWidget {
   const BanglaEpapersScreenGridView({super.key});

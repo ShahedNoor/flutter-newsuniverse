@@ -3,7 +3,7 @@ import 'package:newsuniverse/screens/news_webview_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../../controllers/favourite_data_controller.dart';
-import '../../utils/news_source.dart';
+import '../../data/news_source.dart';
 
 class InternationalTvChannelsScreenGridView extends StatefulWidget {
   const InternationalTvChannelsScreenGridView({super.key});
@@ -25,9 +25,10 @@ class _InternationalTvChannelsScreenGridViewState
     dynamic greaterThan649 = MediaQuery.sizeOf(context).width > 649;
 
     final internationalTvChannelsProvider =
-        Provider.of<NewsSource>(context, listen: false).internationalTvChannelList;
+        Provider.of<NewsSource>(context, listen: false)
+            .internationalTvChannelList;
     final favouriteDataProvider =
-    Provider.of<FavoriteDataController>(context, listen: false);
+        Provider.of<FavoriteDataController>(context, listen: false);
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: greaterThan649 ? 3 : 2, childAspectRatio: 1.7),
@@ -41,7 +42,8 @@ class _InternationalTvChannelsScreenGridViewState
                 context,
                 MaterialPageRoute(
                   builder: (context) => NewsWebView(
-                    url: internationalTvChannelsProvider[index]['newsPaperLink'],
+                    url: internationalTvChannelsProvider[index]
+                        ['newsPaperLink'],
                   ),
                 ),
               );
@@ -61,35 +63,37 @@ class _InternationalTvChannelsScreenGridViewState
                   smallerThan330
                       ? 1.1
                       : smallerThan445
-                      ? 1.0
-                      : smallerThan650
-                      ? 0.9
-                      : 1.0,
+                          ? 1.0
+                          : smallerThan650
+                              ? 0.9
+                              : 1.0,
                   smallerThan330
                       ? 1.4
                       : smallerThan435
-                      ? 1.1
-                      : smallerThan650
-                      ? 0.9
-                      : greaterThan649
-                      ? 1.0
-                      : 1.2,
+                          ? 1.1
+                          : smallerThan650
+                              ? 0.9
+                              : greaterThan649
+                                  ? 1.0
+                                  : 1.2,
                 ),
                 child: IconButton(
                   onPressed: () {
                     setState(
-                          () {
+                      () {
                         internationalTvChannelsProvider[index]['isFavourite'] =
-                        !internationalTvChannelsProvider[index]['isFavourite'];
+                            !internationalTvChannelsProvider[index]
+                                ['isFavourite'];
 
-                        if (internationalTvChannelsProvider[index]['isFavourite']) {
-                          favouriteDataProvider
-                              .addToFavorite(internationalTvChannelsProvider[index]);
+                        if (internationalTvChannelsProvider[index]
+                            ['isFavourite']) {
+                          favouriteDataProvider.addToFavorite(
+                              internationalTvChannelsProvider[index]);
                         } else {
                           int favIndex = favouriteDataProvider.favouriteItems
                               .indexWhere((item) =>
-                          item['id'] ==
-                              internationalTvChannelsProvider[index]['id']);
+                                  item['id'] ==
+                                  internationalTvChannelsProvider[index]['id']);
                           if (favIndex != -1) {
                             favouriteDataProvider.removeFromFavourite(favIndex);
                           }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/news_source.dart';
+import '../data/news_source.dart';
 
 class FavoriteDataController extends ChangeNotifier {
   List favouriteItems = [];

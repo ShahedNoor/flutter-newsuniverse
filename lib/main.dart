@@ -1,8 +1,10 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:newsuniverse/data/database.dart';
 import 'package:newsuniverse/screens/home_screen.dart';
 import 'package:newsuniverse/screens/starter_screen.dart';
-import 'package:newsuniverse/utils/news_source.dart';
+import 'package:newsuniverse/data/news_source.dart';
 import 'package:provider/provider.dart';
 import 'controllers/favourite_data_controller.dart';
 import 'controllers/starter_screen_controller.dart';
@@ -10,6 +12,8 @@ import 'controllers/starter_screen_controller.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
+  await Hive.initFlutter();
+  await Hive.openBox('newsDatabase');
   runApp(
     MultiProvider(
       providers: [
@@ -17,13 +21,16 @@ void main() async {
         ChangeNotifierProvider(create: (context) => NewsSource()),
         ChangeNotifierProvider(create: (context) => FavoriteDataController())
       ],
-      child: NewsUniverse(savedThemeMode: savedThemeMode,),
+      child: NewsUniverse(
+        savedThemeMode: savedThemeMode,
+      ),
     ),
   );
 }
 
 class NewsUniverse extends StatefulWidget {
   final AdaptiveThemeMode? savedThemeMode;
+
   const NewsUniverse({super.key, this.savedThemeMode});
 
   @override
@@ -31,6 +38,15 @@ class NewsUniverse extends StatefulWidget {
 }
 
 class _NewsUniverseState extends State<NewsUniverse> {
+  // Database instance
+  NewsDatabase nd = NewsDatabase();
+
+  @override
+  void initState() {
+    super.initState();
+    nd.createInitialData();
+  }
+
   @override
   Widget build(BuildContext context) {
     var starterScreenProvider = Provider.of<StarterScreenController>(context);
@@ -52,7 +68,9 @@ class _NewsUniverseState extends State<NewsUniverse> {
                 darkTheme: darkTheme,
                 routes: {
                   'starterScreen': (context) => const StarterScreen(),
-                  'homeScreen': (context) => HomeScreen(savedThemeMode: widget.savedThemeMode,)
+                  'homeScreen': (context) => HomeScreen(
+                        savedThemeMode: widget.savedThemeMode,
+                      ),
                 },
                 initialRoute:
                     currentState == 1 ? 'homeScreen' : 'starterScreen'),

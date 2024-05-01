@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:newsuniverse/screens/news_webview_screen.dart';
 import 'package:provider/provider.dart';
 import '../../controllers/favourite_data_controller.dart';
-import '../../utils/news_source.dart';
+import '../../data/news_source.dart';
 
 class MagazineScreenGridView extends StatefulWidget {
   const MagazineScreenGridView({super.key});
 
   @override
-  State<MagazineScreenGridView> createState() =>
-      _MagazineScreenGridViewState();
+  State<MagazineScreenGridView> createState() => _MagazineScreenGridViewState();
 }
 
-class _MagazineScreenGridViewState
-    extends State<MagazineScreenGridView> {
+class _MagazineScreenGridViewState extends State<MagazineScreenGridView> {
   @override
   Widget build(BuildContext context) {
     // Screen size for responsive design
@@ -26,7 +24,7 @@ class _MagazineScreenGridViewState
     final magazinesProvider =
         Provider.of<NewsSource>(context, listen: false).magazineList;
     final favouriteDataProvider =
-    Provider.of<FavoriteDataController>(context, listen: false);
+        Provider.of<FavoriteDataController>(context, listen: false);
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: greaterThan649 ? 3 : 2, childAspectRatio: 1.7),
@@ -50,8 +48,7 @@ class _MagazineScreenGridViewState
                 color: Colors.white,
                 border: Border.all(color: Colors.black, width: 1),
                 image: DecorationImage(
-                  image: AssetImage(
-                      magazinesProvider[index]['newsPaperImage']),
+                  image: AssetImage(magazinesProvider[index]['newsPaperImage']),
                 ),
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -60,26 +57,26 @@ class _MagazineScreenGridViewState
                   smallerThan330
                       ? 1.1
                       : smallerThan445
-                      ? 1.0
-                      : smallerThan650
-                      ? 0.9
-                      : 1.0,
+                          ? 1.0
+                          : smallerThan650
+                              ? 0.9
+                              : 1.0,
                   smallerThan330
                       ? 1.4
                       : smallerThan435
-                      ? 1.1
-                      : smallerThan650
-                      ? 0.9
-                      : greaterThan649
-                      ? 1.0
-                      : 1.2,
+                          ? 1.1
+                          : smallerThan650
+                              ? 0.9
+                              : greaterThan649
+                                  ? 1.0
+                                  : 1.2,
                 ),
                 child: IconButton(
                   onPressed: () {
                     setState(
-                          () {
+                      () {
                         magazinesProvider[index]['isFavourite'] =
-                        !magazinesProvider[index]['isFavourite'];
+                            !magazinesProvider[index]['isFavourite'];
 
                         if (magazinesProvider[index]['isFavourite']) {
                           favouriteDataProvider
@@ -87,8 +84,7 @@ class _MagazineScreenGridViewState
                         } else {
                           int favIndex = favouriteDataProvider.favouriteItems
                               .indexWhere((item) =>
-                          item['id'] ==
-                              magazinesProvider[index]['id']);
+                                  item['id'] == magazinesProvider[index]['id']);
                           if (favIndex != -1) {
                             favouriteDataProvider.removeFromFavourite(favIndex);
                           }
