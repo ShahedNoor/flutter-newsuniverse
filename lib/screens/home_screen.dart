@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:newsuniverse/screens/favourite_screen.dart';
+import 'package:newsuniverse/screens/more_screen.dart';
 import 'package:newsuniverse/screens/search_screen.dart';
 
 import '../widgets/global_widgets/bottom_navigation_bar.dart';
@@ -36,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
         debugShowCheckedModeBanner: false,
         theme: theme,
         darkTheme: darkTheme,
-        home: ForAdaptiveTheme(),
+        home: const ForAdaptiveTheme(),
       ),
     );
   }
@@ -65,7 +66,7 @@ class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
         leadingIconButton: IconButton(
           onPressed: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SearchScreen()));
+                MaterialPageRoute(builder: (context) => const SearchScreen()));
           },
           icon: const Icon(Icons.search),
         ),
@@ -73,11 +74,13 @@ class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
           onPressed: () {
             themeManager.toggleThemeMode();
           },
-          icon: Icon(themeManager.mode.isLight
-              ? lightIcon
-              : themeManager.mode.isDark
-                  ? darkIcon
-                  : systemDefault),
+          icon: Icon(
+            themeManager.mode.isLight
+                ? lightIcon
+                : themeManager.mode.isDark
+                    ? darkIcon
+                    : systemDefault,
+          ),
         ),
       ),
       bottomNavigationBar: BottomNavigation(
@@ -130,7 +133,9 @@ class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
                 ],
               ),
             )
-          : const FavouriteScreen(),
+          : currentIndex == 1
+              ? const FavouriteScreen()
+              : const MoreScreen(),
     );
   }
 }
