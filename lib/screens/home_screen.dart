@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:newsuniverse/screens/favourite_screen.dart';
+import 'package:newsuniverse/screens/search_screen.dart';
 
 import '../widgets/global_widgets/bottom_navigation_bar.dart';
 import '../widgets/global_widgets/my_appbar.dart';
@@ -62,7 +63,10 @@ class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
     return Scaffold(
       appBar: MyAppBar(
         leadingIconButton: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SearchScreen()));
+          },
           icon: const Icon(Icons.search),
         ),
         actionIconButton: IconButton(

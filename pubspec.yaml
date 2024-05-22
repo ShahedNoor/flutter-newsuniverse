@@ -38,6 +38,7 @@ dependencies:
   adaptive_theme: ^3.6.0
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  search_page: ^2.3.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -245,6 +246,7 @@ flutter:
     - assets/images/magazines_images/bangladesherkhela.jpg
     - assets/images/magazines_images/weeklybangalee.jpg
     - assets/images/magazines_images/dhakacourier.jpg
+    - assets/images/magazines_images/bichitra.jpg
     - assets/images/magazines_images/comjagat.jpg
     - assets/images/magazines_images/weeklyholiday.jpg
     - assets/images/magazines_images/kaliokalam.jpg

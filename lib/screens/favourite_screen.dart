@@ -39,7 +39,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
       'internationalTvChannelList',
       'indianNewspaperList',
       'magazineList',
-    ]; // Add more keys if needed
+    ];
 
     for (var key in keys) {
       List<dynamic> papers = box.get(key, defaultValue: []);
@@ -62,24 +62,25 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
     return favouriteNewsPapers.isEmpty
         ? const Center(
             child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.heart_broken,
-                      size: 65,
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Text(
-                      "No newspapers are currently saved in your favourites. Explore and pick your favourites to stay updated!",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 18),
-                    ),
-                  ],
-                )),
+              padding: EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.heart_broken,
+                    size: 65,
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Text(
+                    "No newspapers are currently saved in your favourites. Explore and pick your favourites to stay updated!",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18),
+                  ),
+                ],
+              ),
+            ),
           )
         : GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
