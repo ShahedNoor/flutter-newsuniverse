@@ -65,8 +65,10 @@ class _ForAdaptiveThemeState extends State<ForAdaptiveTheme> {
       appBar: MyAppBar(
         leadingIconButton: IconButton(
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const SearchScreen()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SearchScreen()),
+            );
           },
           icon: const Icon(Icons.search),
         ),

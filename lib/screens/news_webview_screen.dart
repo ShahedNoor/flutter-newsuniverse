@@ -5,6 +5,7 @@ import '../widgets/global_widgets/my_appbar.dart';
 
 class NewsWebView extends StatefulWidget {
   final String url;
+
   const NewsWebView({super.key, required this.url});
 
   @override
@@ -28,7 +29,6 @@ class _NewsWebViewState extends State<NewsWebView> {
       }
     }
 
-    bool isDarkMode = false;
     // Switch Icons
     IconData lightIcon = Icons.light_mode;
     IconData darkIcon = Icons.dark_mode;
@@ -38,20 +38,15 @@ class _NewsWebViewState extends State<NewsWebView> {
       onWillPop: goBack,
       child: Scaffold(
         appBar: MyAppBar(
-          leadingIconButton: IconButton(
-            onPressed: () async {
-              bool shouldCloseApp = await goBack();
-              if (shouldCloseApp) {
-                Navigator.of(context).pop();
-              }
-            },
-            icon: const Icon(Icons.arrow_back_ios),
-          ),
           actionIconButton: IconButton(
             onPressed: () {
               themeManager.toggleThemeMode();
             },
-            icon: Icon(themeManager.mode.isLight ? lightIcon : themeManager.mode.isDark ? darkIcon : systemDefault),
+            icon: Icon(themeManager.mode.isLight
+                ? lightIcon
+                : themeManager.mode.isDark
+                    ? darkIcon
+                    : systemDefault),
           ),
         ),
         body: WebViewWidget(

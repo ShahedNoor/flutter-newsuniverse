@@ -5,11 +5,12 @@ import 'package:url_launcher/url_launcher.dart';
 class MoreScreen extends StatelessWidget {
   const MoreScreen({Key? key}) : super(key: key);
 
-  void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+  void _launchURL(String urlString) async {
+    final Uri url = Uri.parse(urlString);
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
     } else {
-      throw 'Could not launch $url';
+      throw 'Could not launch $urlString';
     }
   }
 
@@ -81,7 +82,7 @@ class MoreScreen extends StatelessWidget {
                       onTap: () {
                         _launchURL('mailto:sancbyt@gmail.com');
                       },
-                      child: ListTile(
+                      child: const ListTile(
                         leading: Icon(Icons.email),
                         title: Text('Email: sancbyt@gmail.com'),
                       ),
@@ -90,7 +91,7 @@ class MoreScreen extends StatelessWidget {
                       onTap: () {
                         _launchURL('tel:+8801648405873');
                       },
-                      child: ListTile(
+                      child: const ListTile(
                         leading: Icon(Icons.phone),
                         title: Text('Phone: +8801648405873'),
                       ),
@@ -112,8 +113,8 @@ class MoreScreen extends StatelessWidget {
                 'https://play.google.com/store/apps/details?id=com.sancbyt.newsuniverse'),
           ),
           ListTile(
-            leading: Icon(Icons.share),
-            title: Text('Share App'),
+            leading: const Icon(Icons.share),
+            title: const Text('Share App'),
             onTap: () {
               final RenderBox box = context.findRenderObject() as RenderBox;
               Share.share(
