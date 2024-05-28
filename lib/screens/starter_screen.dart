@@ -18,6 +18,7 @@ class _StarterScreenState extends State<StarterScreen> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
               "assets/images/starter_icon/starter_icon.png",
@@ -27,7 +28,8 @@ class _StarterScreenState extends State<StarterScreen> {
             const Padding(
               padding: EdgeInsets.all(8),
               child: Text(
-                "Welcome to NewsUniverse!",
+                "Welcome to News Universe!",
+                textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
             ),
