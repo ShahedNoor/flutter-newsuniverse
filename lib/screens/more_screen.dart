@@ -60,13 +60,13 @@ class MoreScreen extends StatelessWidget {
             leading: const Icon(Icons.privacy_tip),
             title: const Text('Privacy Policy'),
             onTap: () => _launchURL(
-                'https://gist.github.com/ShahedNoor/05e7ce9509411f4c9b97073dbc2bc242'),
+                'https://sites.google.com/view/newsuniverse/privacy-policy'),
           ),
           ListTile(
             leading: const Icon(Icons.article),
             title: const Text('Terms of Conditions'),
             onTap: () => _launchURL(
-                'https://gist.github.com/ShahedNoor/fd87c667808d6ba04192346f3e0047a9'),
+                'https://sites.google.com/view/newsuniverse/terms-and-conditions'),
           ),
           ListTile(
             leading: const Icon(Icons.contact_mail),
